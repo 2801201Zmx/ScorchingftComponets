@@ -1,0 +1,34 @@
+# 开发文件
+.vscode/
+.idea/
+*.log
+*.tsbuildinfo
+
+# 构建文件
+node_modules/
+dist/
+
+# 测试文件
+__tests__/
+*.test.*
+*.spec.*
+
+# 配置文件
+.env
+.env.*
+*.config.js
+*.config.ts
+vite.config.ts
+tsconfig*.json
+
+# 文档和示例
+docs/
+examples/
+demo/
+
+# 其他
+.git/
+.gitignore
+README.md
+pnpm-lock.yaml
+yarn.lock 

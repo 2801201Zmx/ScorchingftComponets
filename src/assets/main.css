@@ -1,0 +1,32 @@
+:root {
+  --topic-color: #ca92ff;
+  --topic-color-light: #f0e6ff;
+  --topic-color-dark: #a5a5a5;
+  --topic-color-hover: #d4b2ff;
+  --topic-color-active: #b38aff;
+  --topic-color-focus: #a57aff;
+  --topic-color-text: #8d6cd4;
+  --topic-color-text-dark: #000000;
+  --topic-color-text-light: #ffffff;
+  --topic-color-border: #a5a5a5;
+  --topic-color-border-hover: #b38aff;
+  --topic-color-border-active: #d4b2ff;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  font-family: Inter, -apple-system, sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.cursor {
+  cursor: pointer;
+  user-select: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}

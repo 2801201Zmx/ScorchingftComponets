@@ -1,0 +1,38 @@
+[
+    {
+        "title": "Overview 概览",
+        "components": [
+            {
+                "title": "overview 概览",
+                "path": "overview"
+            }
+        ]
+    },
+    {
+        "title": "Basic 基础组件",
+        "components": [
+            {
+                "title": "Button 按钮",
+                "path": "button"
+            }
+        ]
+    },
+    {
+        "title": "Form 表单组件",
+        "components": [
+            {
+                "title": "Input 输入框",
+                "path": "input"
+            }
+        ]
+    },
+    {
+        "title": "Data 数据组件",
+        "components": [
+            {
+                "title": "Card 卡片",
+                "path": "card"
+            }
+        ]
+    }
+]
