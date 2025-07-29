@@ -54,7 +54,6 @@ const handleClick = (component: any) => {
   font-weight: bolder;
   text-align: center;
   color: var(--topic-color-text);
-  background-color: #dfdfdf;
 }
 
 .components {

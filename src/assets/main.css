@@ -11,6 +11,8 @@
   --topic-color-border: #a5a5a5;
   --topic-color-border-hover: #b38aff;
   --topic-color-border-active: #d4b2ff;
+
+   --input-label-padding:140px 0 0 0;
 }
 
 body {
@@ -25,6 +27,18 @@ body {
 .cursor {
   cursor: pointer;
   user-select: none;
+}
+
+input[type="password"]::-webkit-credentials-cramble-button{
+    appearance: none;
+}
+
+input[type="password"]::-ms-reveal{
+    display: none;
+}
+
+input[type="password"]::-ms-clear{
+    display: none;
 }
 
 ::-webkit-scrollbar {

@@ -13,9 +13,13 @@
 import { onMounted, ref } from 'vue';
 import { useRouter } from 'vue-router';
 import Siderbar from './siderbar/siderbar.vue';
+import getPathName from '@/utils/getpathname';
 
 const router = useRouter();
 
+onMounted(() => {
+    getPathName(window.location.pathname);
+})
 </script>
 
 <style scoped>
@@ -28,16 +32,15 @@ main {
 
 .siderbar {
     width: 16%;
-    height: calc(100% -70px);
-    padding: 70px 0 0 0;
+    height: calc(100% - var(--input-label-padding));
+    padding: var(--input-label-padding);
     overflow-y:auto;
 }
 
 .content {
     width: 100%;
     height: calc(100% -80px);
-    background-color: aliceblue;
-    padding: 0 40px;
+    padding: 0 40px 20px 40px;
     overflow-y:auto;
 }
 </style>

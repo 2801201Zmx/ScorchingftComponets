@@ -4,20 +4,15 @@
         <h5>基于 Vue3 + TypeScript 的组件库</h5>
     </div>
     <div class="card">
-        <sf-card>
+        <sf-card v-for="(item, index) in Components" :key="index">
             <div class="content">
-
+                <h2>{{ item.title }}</h2>
+                <span>
+                    {{ item.content }}
+                </span>
             </div>
-            <div class="btn" @click="router.push('/guide/start.html')">
-                使用指南
-            </div>
-        </sf-card>
-        <sf-card>
-            <div class="content">
-
-            </div>
-            <div class="btn" @click="router.push('/components/overview.html')">
-                组件列表
+            <div class="btn" @click="router.push(item.path)">
+                查看详情
             </div>
         </sf-card>
     </div>
@@ -27,6 +22,21 @@
 import { useRouter } from 'vue-router';
 
 const router = useRouter();
+
+const Components = [
+    {
+        "title": "使用指南",
+        "content": "快速上手和了解 Scorchingft 组件库",
+        "path": "/guide/start.html",
+    },
+    {
+        "title": "组件概览",
+        "content": "预览和使用 Scorchingft 组件库中的所有组件",
+        "path": "/components/overview.html",
+    }
+]
+
+
 </script>
 
 <style scoped>
@@ -78,8 +88,27 @@ h5 {
     width: 100%;
     height: 80%;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: start;
     align-items: center;
+}
+
+.card .sf-card:nth-child(1) .content {
+    background: url('/componets_help.png') no-repeat center center;
+    background-size: cover;
+}
+
+.card .sf-card .content span {
+    margin-top: 30px;
+}
+
+.card .sf-card .content h2 {
+    color: var(--topic-color-text);
+}
+
+.card .sf-card:nth-child(2) .content {
+    background: url('/componets_list.png') no-repeat center center;
+    background-size: cover;
 }
 
 .card .sf-card .btn {
@@ -96,5 +125,6 @@ h5 {
 
 .card .sf-card .btn:hover {
     background-color: #ca92ff;
+    color: white;
 }
 </style>

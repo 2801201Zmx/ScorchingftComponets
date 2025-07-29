@@ -10,27 +10,28 @@
             </p>
         </div>
         <div class="content">
-            <div class="title">
-                <span>基础版</span>
-            </div>
-            <div class="example" :style="{ height: height + 'px' }">
-                <div class="components">
-                    <sf-input style="width: 240px" placeholder="请输入内容" />
+            <div class="code" v-for="(item) in InputView" :key="item.id">
+                <div class="title">
+                    <span>{{ item.title }}</span>
                 </div>
-                <div class="function">
-                    <span class="cursor" title="复制代码">
-                        <img src="/public/copy.svg" alt="">
-                    </span>
-                    <span class="cursor" title="查看代码" @click="changeHeight">
-                        <img src="/public/code.svg" alt="">
-                    </span>
-                </div>
-                <div class="code">
-                    <pre>
-                    <code class="language-html">
-                        {{ codeSnippet }}
-                    </code>
-                </pre>
+                <div class="example">
+                    <div class="components">
+                        <component v-for="(components, keys) in item.componentName" :is="components" v-bind="item.props[keys]"></component>
+                    </div>
+                    <div class="function">
+                        <span class="cursor" title="复制代码">
+                            <img src="/copy.svg" alt="">
+                        </span>
+                        <span class="cursor" title="查看代码" @click="viewCode(item.id - 1)">
+                            <img src="/code.svg" alt="">
+                        </span>
+                    </div>
+                    <div class="code" :style="{ height: codeHeight[item.id - 1] + 'px' }"
+                        ref="codeBlocks">
+                        <pre>
+                            <code v-html="count.codeHighlight[item.id - 1]"></code>
+                        </pre>
+                    </div>
                 </div>
             </div>
         </div>
@@ -38,59 +39,57 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
-import Prism from 'prismjs';
+import { ref, onMounted, onBeforeMount } from 'vue';
+import 'highlight.js/styles/github.css';
+import InputView from '@/JSON/inputView.json';
 
-import 'prismjs/components/prism-javascript';
-import "prism-themes/themes/prism-one-light.css";
-import 'prismjs/components/prism-markup';
+import inputCodeHighlight from '@/utils/codeHigh_input';
 
-//默认主题
-//import 'prismjs/themes/prism.css';
+import { useCounterStore } from '@/store/counter';
 
-// 深色主题
-// import "prism-themes/themes/prism-dracula.css";          // Dracula 主题
-// import "prism-themes/themes/prism-material-dark.css";   // Material 深色
-// import "prism-themes/themes/prism-nord.css";            // Nord 主题
-// import "prism-themes/themes/prism-one-dark.css";        // One Dark 主题
-// import "prism-themes/themes/prism-vsc-dark-plus.css";   // VS Code 深色+
+const count = useCounterStore();
 
-// 浅色主题
-// import "prism-themes/themes/prism-ghcolors.css";         // GitHub 风格
-// import "prism-themes/themes/prism-material-light.css";  // Material 浅色
-// import "prism-themes/themes/prism-one-light.css";       // One Light 主题
-// 
-// 特殊风格
-// import "prism-themes/themes/prism-coldark-cold.css";    // 冷色系
-// import "prism-themes/themes/prism-coy-without-shadows.css"; // 无阴影版
-// import "prism-themes/themes/prism-holi-theme.css";      // 彩虹主题
 
-const codeSnippet = ref<string>(`
-<template>\n
-  <sf-input v-model="input" style="width: 240px" placeholder="请输入内容" />\n
-</template>\n
-<script setup lang="ts">\n
-    import { ref } from 'vue';\n
+// ### 浅色主题：
+// 1. `default.css` - **默认主题**，简洁的浅色背景  
+// 2. `github.css` - GitHub 风格  
+// 3. `atom-one-light.css` - Atom 编辑器的浅色主题  
+// 4. `vs.css` - Visual Studio 风格的浅色主题  
+// 5. `xcode.css` - Xcode IDE 风格的浅色主题  
 
-    const input = ref('');\n
-</sc` + `ript>\n
-`);
+// ### 深色主题：
+// 1. `dracula.css` - 暗紫色调，高对比度  
+// 2. `monokai-sublime.css` - Sublime Text 风格  
+// 3. `atom-one-dark.css` - Atom 编辑器的深色主题  
+// 4. `vs2015.css` - Visual Studio 2015 深色主题  
+// 5. `night-owl.css` - 夜间猫头鹰风格，蓝紫色调  
 
-const height = ref<number>(106);
-const isClicked = ref<boolean>(false);
+// ### 特殊风格：
+// 1. `solarized-light.css` - Solarized 浅色（低对比度护眼）  
+// 2. `solarized-dark.css` - Solarized 深色（低对比度护眼）  
+// 3. `gradient-dark.css` - 渐变色背景深色主题  
+// 4. `stackoverflow-light.css` - Stack Overflow 风格  
 
-function changeHeight() {
-    if (!isClicked.value) {
-        height.value = 380;
-        isClicked.value = true;
-    } else {
-        height.value = 106;
-        isClicked.value = false;
-    }
+const codeBlocks = ref<(HTMLElement | null)[]>([]);
+const isClicked = ref<boolean>(true), isPassClicked = ref<boolean>(true);
+const EXAMPLE_COUNT = 2;
+let codeHeight = ref<number[]>([]);
+
+const maxHeight = ref<number[]>([]);
+
+function viewCode(id: number) {
+    isClicked.value ? codeHeight.value[id] = maxHeight.value[id] : codeHeight.value[id] = 0;
+    isClicked.value ? isClicked.value = false : isClicked.value = true;
 }
 
-onMounted(() => {
-    Prism.highlightAll();
+onMounted(async () => {
+    inputCodeHighlight(() => {
+        maxHeight.value = [];
+        for (let i = 0; i < codeBlocks.value.length; i++) {
+            maxHeight.value.push(Number(codeBlocks.value[i]!.offsetHeight));
+            codeHeight.value[i] = 0;
+        }
+    });
 });
 </script>
 
@@ -124,7 +123,7 @@ onMounted(() => {
 .content .title {
     font-size: 1.6rem;
     font-weight: bolder;
-    margin-bottom: 20px;
+    margin: 40px 0 20px 0;
     color: var(--topic-color-text);
 }
 
@@ -132,7 +131,6 @@ onMounted(() => {
     width: 100%;
     border: 1px solid #ce9bfd;
     margin-top: 10px;
-    transition: all 0.3s;
     overflow: hidden;
 }
 
@@ -176,30 +174,20 @@ onMounted(() => {
 }
 
 .example .code {
+    display: flex;
     width: 100%;
-    height: 100%;
+    height: fit-content;
+    font-weight: 500;
+    font-size: 1rem;
+    margin-top: 5px;
+    transition: all 0.3s ease;
+    background-color: rgba(226, 233, 240, 0.418);
 }
 
-.example pre[class*="language-"] {
-    background: #3c3c4311;
-    height: 100%;
-    border-left: none;
-    box-shadow: none;
-    line-height: 0.8;
-    font-size: 1.1rem;
-    font-weight: 500;
-    margin: 0;
-    overflow: hidden;
-}
-
-.example code[class*="language-"] {
-    background: transparent;
-    height: 100%;
-    font-family: 'Fira Code', monospace;
-    font-size: .875em;
-    font-weight: 500;
-    line-height: 0.8;
-    text-shadow: none;
-    overflow: hidden;
+.example .code pre {
+    width: 100%;
+    height: fit-content;
+    padding: 10px 0 0 20px;
+    line-height: 20px;
 }
 </style>

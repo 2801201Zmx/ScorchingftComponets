@@ -43,6 +43,8 @@
   },
   "dependencies": {
     "@types/prismjs": "^1.26.5",
+    "highlight.js": "^11.11.1",
+    "pinia": "^3.0.3",
     "prism-themes": "^1.9.0",
     "prismjs": "^1.30.0",
     "vue-router": "^4.5.1"
@@ -55,6 +57,7 @@
     "npm-run-all2": "^8.0.4",
     "shiki": "^3.8.0",
     "typescript": "~5.8.0",
+    "unplugin-vue-define-options": "3.0.0-beta.17",
     "vite": "^7.0.0",
     "vite-plugin-vue-devtools": "^7.7.7",
     "vue": "^3.5.17",

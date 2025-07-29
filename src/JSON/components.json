@@ -14,6 +14,10 @@
             {
                 "title": "Button 按钮",
                 "path": "button"
+            },
+            {
+                "title": "Icon 图标",
+                "path": "icon"
             }
         ]
     },

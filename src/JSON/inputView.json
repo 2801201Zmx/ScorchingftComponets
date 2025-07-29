@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "title": "基础用法",
+        "componentName": ["sf-input"],
+        "props": [
+            {
+            "style": "width: 240px",
+            "placeholder": "请输入内容"
+            }
+        ]  
+    },
+    {
+        "id": 2,
+        "title": "禁用状态",
+        "componentName": ["sf-input"],
+        "props": [
+            {
+            "style": "width: 240px",
+            "placeholder": "请输入内容",
+            "disabled": true
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "title": "一键清空",
+        "componentName": ["sf-input"],
+        "props": [
+            {
+            "style": "width: 240px",
+            "placeholder": "请输入内容",
+            "clearable": true
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "title": "密码框",
+        "componentName": ["sf-input"],
+        "props": [
+            {
+            "style": "width: 240px",
+            "placeholder": "请输入密码",
+            "type": "password",
+            "showPassword": true
+            }
+        ]
+    }
+]
