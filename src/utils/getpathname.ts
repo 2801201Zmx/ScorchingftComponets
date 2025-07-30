@@ -5,6 +5,6 @@ export default function getPathName(path: string) {
     
     count.isIndex = !(path === '/');
     count.headerLogo = count.isIndex
-        ? 'https://images.scorchingft.cn/assets/images/ComponetsICON_.png'
-        : 'https://images.scorchingft.cn/assets/images/ComponetsICON_white.png';
+        ? '/ComponetsICON_.png'
+        : '/ComponetsICON_white.png';
 }
