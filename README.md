@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="300px" src="/public/ComponetsICON_.jpg">
+  <img width="300px" src="/public/ComponetsICON_.png">
 </p>
 # Scorchingft Components
 
