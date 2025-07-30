@@ -24,7 +24,7 @@
       v-if="clearable"
       @click="clearInput"
     >
-      <img src="/close.svg" alt="">
+      <img src="/circleclose.svg" alt="">
     </span>
   </div>
 </template>

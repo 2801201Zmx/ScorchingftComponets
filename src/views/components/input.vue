@@ -19,9 +19,9 @@
                         <component v-for="(components, keys) in item.componentName" :is="components" v-bind="item.props[keys]"></component>
                     </div>
                     <div class="function">
-                        <span class="cursor" title="复制代码">
-                            <img src="/copy.svg" alt="">
-                        </span>
+                        <sf-icon>
+                            <CopyDocument />
+                        </sf-icon>
                         <span class="cursor" title="查看代码" @click="viewCode(item.id - 1)">
                             <img src="/code.svg" alt="">
                         </span>
@@ -46,6 +46,7 @@ import InputView from '@/JSON/inputView.json';
 import inputCodeHighlight from '@/utils/codeHigh_input';
 
 import { useCounterStore } from '@/store/counter';
+import { CopyDocument } from '@/scorchingft/icon/icon';
 
 const count = useCounterStore();
 
@@ -98,22 +99,6 @@ onMounted(async () => {
     width: 100%;
     height: 100%;
     overflow-y: auto;
-}
-
-.h1-title {
-    margin-top: 5%;
-}
-
-.h1-title span {
-    font-size: 1.6rem;
-    font-weight: bolder;
-    margin-bottom: 20px;
-    color: var(--topic-color-text);
-}
-
-.h1-title p {
-    font-size: 1.2rem;
-    color: var(--topic-color-text);
 }
 
 .content {

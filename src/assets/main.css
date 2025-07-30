@@ -29,6 +29,22 @@ body {
   user-select: none;
 }
 
+.h1-title {
+    margin-top: 5%;
+}
+
+.h1-title span {
+    font-size: 1.6rem;
+    font-weight: bolder;
+    margin-bottom: 20px;
+    color: var(--topic-color-text);
+}
+
+.h1-title p {
+    font-size: 1.2rem;
+    color: var(--topic-color-text);
+}
+
 input[type="password"]::-webkit-credentials-cramble-button{
     appearance: none;
 }

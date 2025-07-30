@@ -18,7 +18,7 @@
 <script setup lang="ts">
 import { useRouter } from 'vue-router';
 import { useCounterStore } from '@/store/counter';
-import getPathName from '@/utils/getpathname';
+import { getPathName } from '@/utils/getpathname';
 
 const count = useCounterStore();
 

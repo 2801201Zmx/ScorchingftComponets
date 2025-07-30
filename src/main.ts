@@ -5,8 +5,8 @@ import { createPinia } from 'pinia';
 import App from '@/App.vue';
 import router from '@/router';
 
-import ScorchingftComponents from '@/index';
-import '@/components/style/index.css';
+import Scorchingft from 'Scorchingft-Components';
+import ScorchingftICON from 'ScorchingftIcon';
 
 const pinia = createPinia();
 const app = createApp(App);
@@ -14,5 +14,6 @@ const app = createApp(App);
 app.use(router);
 
 app.use(pinia);
-app.use(ScorchingftComponents);
+app.use(Scorchingft);
+app.use(ScorchingftICON);
 app.mount('#app');

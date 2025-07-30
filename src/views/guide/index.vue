@@ -11,7 +11,7 @@
 <script setup lang="ts">
 import Siderbar from './siderbar/siderbar.vue';
 import { onMounted } from 'vue';
-import getPathName from '@/utils/getpathname';
+import { getPathName } from '@/utils/getpathname';
 
 onMounted(() => {
     getPathName(window.location.pathname);

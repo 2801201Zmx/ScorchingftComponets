@@ -10,7 +10,7 @@ import { reactive, watchEffect } from 'vue'
 const props = defineProps({
   size: {
     type: String,
-    default: '' // 默认大小
+    default: ''
   }
 })
 

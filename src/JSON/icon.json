@@ -1,0 +1,29 @@
+[
+    {
+        "id": 1,
+        "title": "系统类图标",
+        "components": [
+           "View", "Hide", "CircleClose", "CircleCloseFilled"
+        ]
+    },
+    {
+        "id": 3,
+        "title": "文档类图标",
+        "components": [
+            "CopyDocument"
+        ]
+    },
+    {
+        "id": 4,
+        "title": "网站类图标",
+        "components": [
+            "GitHubDark", "GitHubLight"
+        ]
+    },
+    {
+        "id": 5,
+        "title": "其他图标",
+        "components": [
+        ]
+    }
+]

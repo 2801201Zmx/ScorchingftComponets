@@ -1,27 +1,27 @@
-import '@/components/style/index.css'
+// Vue 插件安装函数
+import type { App } from 'vue'
+import '@/scorchingft/style/index.css'
 // 导入组件
-import SFCard from '@/components/card.vue'
-import SFInput from '@/components/input.vue'
+import SFCard from '@/scorchingft/card.vue'
+import SFInput from '@/scorchingft/input.vue'
+import SFIcon from '@/scorchingft/icon.vue'
 
-import type InputProps from '@/components/input.vue'
-import type CardProps from '@/components/card.vue'
+import type InputProps from '@/scorchingft/input.vue'
+import type CardProps from '@/scorchingft/card.vue'
+import type IconProps from '@/scorchingft/icon.vue'
 
 // 导出组件
 export {
-  SFInput, SFCard
+  SFInput, SFCard, SFIcon
 }
 
 // 导出组件类型
 export type {
-  InputProps, CardProps
+  InputProps, CardProps, IconProps
 }
 
-// Vue 插件安装函数
-import type { App } from 'vue'
-
 const components = {
-  SFInput,
-  SFCard
+  SFInput, SFCard, SFIcon
 }
 
 const toKebabCase = (str: string) => {

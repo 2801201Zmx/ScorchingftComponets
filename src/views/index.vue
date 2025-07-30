@@ -82,6 +82,7 @@ h5 {
 
 .card .sf-card:hover {
     transform: translateY(-10px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 .card .sf-card .content {
