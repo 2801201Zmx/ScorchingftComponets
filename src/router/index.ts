@@ -10,7 +10,7 @@ const router = createRouter({
       children: [
         {
           path: '',
-          name:'index',
+          name: 'index',
           component: () => import('@/views/index.vue'),
         },
         {
@@ -19,16 +19,16 @@ const router = createRouter({
           component: () => import('@/views/guide/index.vue'),
           children: [
             {
-              path: 'start.html',
-              name: 'start',
-              component: () => import('@/views/guide/start.vue'),
+              path: 'introduction',
+              name: 'introduction',
+              component: () => import('@/views/guide/introduction.vue'),
             },
             {
-              path: ':componentName',
-              name: 'componentDetail',
-              component: () => import('@/views/guide/GuideLoader.vue'),
+              path: ':guideName',
+              name: 'guideDetail',
+              component: () => import('@/views/Loader.vue'),
               props: (route) => ({
-                componentPath: `./views/guide/${route.params.componentName}.vue`
+                componentPath: `./guide/${route.params.guideName}.vue`
               })
             }
           ]
@@ -39,16 +39,16 @@ const router = createRouter({
           component: () => import('@/views/components/index.vue'),
           children: [
             {
-              path: 'overview.html',
+              path: 'overview',
               name: 'overview',
               component: () => import('@/views/components/overview.vue'),
             },
             {
               path: ':componentName',
               name: 'componentDetail',
-              component: () => import('@/views/components/ComponentLoader.vue'),
+              component: () => import('@/views/Loader.vue'),
               props: (route) => ({
-                componentPath: `./views/components/${route.params.componentName}.vue`
+                componentPath: `./components/${route.params.componentName}.vue`
               })
             }
           ]

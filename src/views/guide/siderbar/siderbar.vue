@@ -28,21 +28,19 @@ const getComponentIndex = (group: any, comp: any) => {
   return -1;
 };
 
-// 更新激活状态（保留.html后缀）
 watchEffect(() => {
   const activeStates: boolean[] = [];
   Components.forEach(group => {
     group.components.forEach(comp => {
       // 直接比较当前路由路径是否包含组件路径.html
-      activeStates.push(route.path.includes(`${comp.path}.html`));
+      activeStates.push(route.path.includes(`${comp.path}`));
     });
   });
   isActive.value = activeStates;
 });
 
-// 点击事件处理（保留.html后缀）
 const handleClick = (component: any) => {
-  router.push(`/components/${component.path}.html`);
+  router.push(`/guide/${component.path}.html`);
 };
 </script>
 

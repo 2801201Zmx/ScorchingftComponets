@@ -6,17 +6,18 @@ const props = defineProps<{
 }>();
 
 const dynamicComponent = shallowRef();
-
 watch(() => props.componentPath, async (path) => {
   try {
+    // 确保路径正确，去掉.html后缀
+    path = path.split('.html')[0] + (path.split('.html')[1] || '');
     // 动态加载目标组件（使用物理路径）
     dynamicComponent.value = defineAsyncComponent(() => 
-      import(/* @vite-ignore */ `../../${path}`)
+      import(/* @vite-ignore */ `${path}`)
     );
   } catch (e) {
-    console.error('组件加载失败', e);
     dynamicComponent.value = null;
   }
+  console.log('动态组件路径:', path);
 }, { immediate: true });
 </script>
 

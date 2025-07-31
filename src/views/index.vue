@@ -27,12 +27,12 @@ const Components = [
     {
         "title": "使用指南",
         "content": "快速上手和了解 Scorchingft 组件库",
-        "path": "/guide/start.html",
+        "path": "/guide/introduction",
     },
     {
         "title": "组件概览",
         "content": "预览和使用 Scorchingft 组件库中的所有组件",
-        "path": "/components/overview.html",
+        "path": "/components/overview",
     }
 ]
 
@@ -96,7 +96,7 @@ h5 {
 
 .card .sf-card:nth-child(1) .content {
     background: url('/componets_help.png') no-repeat center center;
-    background-size: cover;
+    background-size: 100% 100%;
 }
 
 .card .sf-card .content span {
@@ -109,7 +109,7 @@ h5 {
 
 .card .sf-card:nth-child(2) .content {
     background: url('/componets_list.png') no-repeat center center;
-    background-size: cover;
+    background-size: 100% 100%;
 }
 
 .card .sf-card .btn {

@@ -9,7 +9,7 @@ import { reactive, watchEffect } from 'vue'
 
 const props = defineProps({
   size: {
-    type: String,
+    type: Number,
     default: ''
   }
 })
@@ -25,12 +25,12 @@ const cardSizes = reactive<cardSizesItem>({
 })
 
 watchEffect(() => {
-  if(props.size == '') {
-    cardSizes.cardWidth = 370
-    cardSizes.cardHeight = 250
+  if(!props.size) {
+    cardSizes.cardWidth = 370;
+    cardSizes.cardHeight = 250;
   } else {
-    cardSizes.cardWidth = 370 + parseInt(props.size)
-    cardSizes.cardHeight = 250 + parseInt(props.size)
+    cardSizes.cardWidth = 7 * props.size;
+    cardSizes.cardHeight = 5 * props.size;
   }
 })
 
