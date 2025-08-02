@@ -5,7 +5,6 @@
                 Input 输入框
             </span>
             <p>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 输入框组件用于接收用户输入的文本信息。它支持多种类型的输入，包括文本、密码、数字等，并提供了多种配置选项以满足不同的需求。
             </p>
         </div>
@@ -106,8 +105,8 @@ onMounted(async () => {
 }
 
 .content .title {
-    font-size: 1.6rem;
-    font-weight: bolder;
+    font-size: 1.5rem;
+    font-weight: bold;
     margin: 40px 0 20px 0;
     color: var(--topic-color-text);
 }

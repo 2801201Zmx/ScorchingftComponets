@@ -17,7 +17,6 @@ watch(() => props.componentPath, async (path) => {
   } catch (e) {
     dynamicComponent.value = null;
   }
-  console.log('动态组件路径:', path);
 }, { immediate: true });
 </script>
 

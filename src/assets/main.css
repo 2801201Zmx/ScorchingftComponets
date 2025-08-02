@@ -34,7 +34,7 @@ body {
 }
 
 .h1-title span {
-    font-size: 1.6rem;
+    font-size: 1.7rem;
     font-weight: bolder;
     margin-bottom: 20px;
     color: var(--topic-color-text);
@@ -43,6 +43,7 @@ body {
 .h1-title p {
     font-size: 1.2rem;
     color: var(--topic-color-text);
+    text-indent: 2em;
 }
 
 input[type="password"]::-webkit-credentials-cramble-button{

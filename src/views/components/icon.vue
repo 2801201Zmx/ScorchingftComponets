@@ -4,7 +4,6 @@
             ICON 图标组件
         </span>
         <p>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             Scorchingft 提供了多种常用图标组件。使用简单，易于集成到您的项目中。
         </p>
     </div>
