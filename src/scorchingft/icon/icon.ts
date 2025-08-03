@@ -7,13 +7,14 @@ import Hide from './hide.vue';
 import CopyDocument from './copydocument.vue';
 import GitHubDark from './github-dark.vue';
 import GitHubLight from './github-light.vue';
+import Document from './document.vue';
 
 export { 
-    CircleCloseFilled, CircleClose, View, Hide, CopyDocument, GitHubDark, GitHubLight
+    CircleCloseFilled, CircleClose, View, Hide, CopyDocument, GitHubDark, GitHubLight, Document
 }
 
 const components = {
-    CircleCloseFilled, CircleClose, View, Hide, CopyDocument, GitHubDark, GitHubLight
+    CircleCloseFilled, CircleClose, View, Hide, CopyDocument, GitHubDark, GitHubLight, Document
 }
 
 export default {

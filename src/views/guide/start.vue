@@ -57,7 +57,10 @@
                         </span>
                     </div>
                     <div class="grammar">
-                        $&nbsp;&nbsp;&nbsp;{{ installMethod }} install Scorchingft
+                        <span @mouseenter="hideCode(1)" @mouseleave="hideCode(0)">
+                            $&nbsp;&nbsp;&nbsp;{{ installMethod }}
+                            <Copybtn v-if="isHide" />
+                        </span>
                     </div>
                 </div>
             </div>
@@ -67,6 +70,7 @@
 
 <script setup lang="ts">
 import { ref, reactive } from 'vue';
+import Copybtn from '@/views/Copy.vue';
 
 interface Compatibility {
     browser: string;
@@ -134,13 +138,13 @@ const installMethods = reactive<Array<InstallMethodsItem>>([
 const id = ref<number>(0);
 const borderbottom= ref<Array<string>>([]);
 
-const installMethod = ref<string>(installMethods[0].name);
+const installMethod = ref<string>(installMethods[0].name + ' install scorchingft-components');
 
 borderbottom.value[0] = '3px solid #ca92ff';
 
 function changeMethod(index:number) {
 
-    installMethod.value = installMethods[index - 1].name;
+    installMethod.value = installMethods[index - 1].name + ' install scorchingft-components';
     borderbottom.value[index - 1] = '3px solid #ca92ff';
 
     if( id.value != index - 1 ) {
@@ -149,6 +153,11 @@ function changeMethod(index:number) {
     }
 }
 
+const isHide = ref<boolean>(false);
+
+function hideCode( id: number ) {
+    id ? isHide.value = true : isHide.value = false;
+}
 </script>
 
 <style scoped>
@@ -234,5 +243,14 @@ function changeMethod(index:number) {
 
 .method .grammar {
     padding: 20px 20px;
+    position: relative;
+}
+
+.grammar span {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    border-radius: 5px;
+    padding: 10px 5px;
 }
 </style>

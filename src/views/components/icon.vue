@@ -13,7 +13,7 @@
                 {{ item.title }}
             </div>
             <div class="allicon">
-                <span v-for="(icon, index) in item.components" :key="index">
+                <span class="allicon-list" v-for="(icon, index) in item.components" :key="index">
                     <sf-icon>
                         <component :is="icon" />
                     </sf-icon>
@@ -68,7 +68,7 @@ import ICON from '@/JSON/icon.json';
     margin-top: 10px;
 }
 
-.allicon span {
+.allicon .allicon-list {
     display: flex;
     width: 100%;
     height: 100%;
