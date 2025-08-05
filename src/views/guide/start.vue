@@ -42,27 +42,33 @@
                 </table>
             </div>
             <div class="setup">
-                <span>
-                    <div class="text">
-                        安装
-                    </div>
+                <div class="setup-steps" v-for="(items, index) in setupSteps" :key="index">
+                    <span class="text">
+                        {{ items.title }}
+                    </span>
                     <p>
-                        可以通过一下方式将 Scorchingft 组件库安装到您的项目中：
+                        {{ items.subheading }}
                     </p>
-                </span>
-                <div class="method">
-                    <div class="title">
-                        <span class="cursor" v-for="item in installMethods" :style="{borderBottom:borderbottom[item.id - 1]}" @click="changeMethod(item.id)">
-                            <img :src="item.img" alt="">{{ item.name }}
-                        </span>
-                    </div>
-                    <div class="grammar">
-                        <span @mouseenter="hideCode(1)" @mouseleave="hideCode(0)">
-                            $&nbsp;&nbsp;&nbsp;{{ installMethod }}
-                            <Copybtn v-if="isHide" />
-                        </span>
+                    <div class="method">
+                        <div class="title" v-if="items.istitle">
+                            <span class="cursor" v-for="item in installMethods"
+                                :style="{ borderBottom: borderbottom[item.id - 1] }" @click="changeMethod(item.id)">
+                                <img :src="item.img" alt="">{{ item.name }}
+                            </span>
+                        </div>
+                        <Code :isShell="items.shell">
+                            <template #codetype>
+                                {{ items.codetype }}
+                            </template>
+                            <template #code>
+                                <span v-html="items.code"></span>
+                            </template>
+                        </Code>
                     </div>
                 </div>
+            </div>
+            <div class="bottom">
+                现在，您可以在您的项目里使用Scorching组件库里的所有的组件了！
             </div>
         </div>
     </div>
@@ -70,7 +76,7 @@
 
 <script setup lang="ts">
 import { ref, reactive } from 'vue';
-import Copybtn from '@/views/Copy.vue';
+import Code from '@/views/code.vue';
 
 interface Compatibility {
     browser: string;
@@ -112,8 +118,8 @@ const compatibility = reactive<Array<Compatibility>>([
 ]);
 
 interface InstallMethodsItem {
-    id:number,
-    img:string,
+    id: number,
+    img: string,
     name: string
 }
 
@@ -136,28 +142,67 @@ const installMethods = reactive<Array<InstallMethodsItem>>([
 ]);
 
 const id = ref<number>(0);
-const borderbottom= ref<Array<string>>([]);
-
-const installMethod = ref<string>(installMethods[0].name + ' install scorchingft-components');
+const borderbottom = ref<Array<string>>([]);
 
 borderbottom.value[0] = '3px solid #ca92ff';
 
-function changeMethod(index:number) {
-
-    installMethod.value = installMethods[index - 1].name + ' install scorchingft-components';
+function changeMethod(index: number) {
+    setupSteps[0].code = installMethods[index - 1].name + ' install scorchingft-components';
     borderbottom.value[index - 1] = '3px solid #ca92ff';
 
-    if( id.value != index - 1 ) {
+    if (id.value != index - 1) {
         borderbottom.value[id.value] = 'none';
-        id.value = index -1;
+        id.value = index - 1;
     }
 }
 
-const isHide = ref<boolean>(false);
-
-function hideCode( id: number ) {
-    id ? isHide.value = true : isHide.value = false;
+interface setupStepsItems {
+    title: string,
+    subheading: string,
+    codetype: string,
+    code: string,
+    shell: boolean,
+    istitle: boolean
 }
+
+const code = ref<string>(`import { createApp } from 'vue'
+import ScorchingftComponents from 'scorchingft-components'</span>
+import 'scorchingft-components/dist/style.css'</span>
+
+const app = createApp(App)
+app.use(ScorchingftComponents)</span>
+app.mount('#app')
+`)
+
+const codeView = ref<string>(`
+import { createApp } from 'vue'
+<span style="color:green;">[ + ]  import ScorchingftComponents from 'scorchingft-components'</span>
+<span style="color:green;">[ + ]  import 'scorchingft-components/dist/style.css'</span>
+
+const app = createApp(App)
+<span style="color:green;">[ + ]  app.use(ScorchingftComponents)</span>
+app.mount('#app')
+`)
+
+const setupSteps = reactive<Array<setupStepsItems>>([
+    {
+        title: "安装",
+        subheading: "可以通过一下方式将 Scorchingft 组件库安装到您的项目中：",
+        codetype: "shell",
+        code: installMethods[0].name + ' install scorchingft-components',
+        shell: true,
+        istitle: true
+    },
+    {
+        title: "注册",
+        subheading: "在安装完成后您还需要全局注册后才能正常使用",
+        codetype: "main.ts",
+        code: codeView.value,
+        shell: false,
+        istitle: false
+    }
+])
+
 </script>
 
 <style scoped>
@@ -204,29 +249,30 @@ function hideCode( id: number ) {
 
 .content .compatibility table .browser {
     background-color: #f9f9f9;
-        border-top: none;
+    border-top: none;
 }
 
 .content .compatibility table .version {
-   border-bottom: none;
+    border-bottom: none;
 }
 
 .setup {
     margin-top: 20px;
 }
 
-.setup span p {
+.setup p {
     font-size: 1.1rem;
-    color:var(--topic-color-text);
+    color: var(--topic-color-text);
     text-indent: 2em;
 }
 
 .method {
-    width:90%;
+    width: 90%;
     margin: 0 auto;
-    background-color: #e6e6e6;
+    background-color: #d4d4d4;
     border-radius: 8px;
     overflow: hidden;
+    
 }
 
 .method .title {
@@ -241,16 +287,10 @@ function hideCode( id: number ) {
     text-align: center;
 }
 
-.method .grammar {
-    padding: 20px 20px;
-    position: relative;
-}
-
-.grammar span {
-    position: relative;
-    display: inline-block;
-    width: 100%;
-    border-radius: 5px;
-    padding: 10px 5px;
+.bottom {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: var(--topic-color-text);
+    text-indent: 2em;
 }
 </style>

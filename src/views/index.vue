@@ -11,7 +11,7 @@
                     {{ item.content }}
                 </span>
             </div>
-            <div class="btn" @click="router.push(item.path)">
+            <div class="btn curosr" @click="router.push(item.path)">
                 查看详情
             </div>
         </sf-card>
@@ -50,6 +50,7 @@ const Components = [
     align-items: center;
     background: linear-gradient(to bottom, #ca92ff, white);
     text-decoration: 1.8px underline solid var(--topic-color-text);
+    user-select: none;
 }
 
 h1 {
@@ -121,7 +122,7 @@ h5 {
     color: var(--topic-color-text);
     font-size: 1.2em;
     border-top: 1px solid #ce9bfd;
-    cursor: pointer;
+    user-select: none;
 }
 
 .card .sf-card .btn:hover {
