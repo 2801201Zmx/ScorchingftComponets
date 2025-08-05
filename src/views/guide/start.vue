@@ -68,7 +68,7 @@
                 </div>
             </div>
             <div class="bottom">
-                现在，您可以在您的项目里使用Scorching组件库里的所有的组件了！
+                至此，您可以在您的项目里使用Scorching组件库里的所有的组件了！
             </div>
         </div>
     </div>
