@@ -56,12 +56,13 @@
                                 <img :src="item.img" alt="">{{ item.name }}
                             </span>
                         </div>
-                        <Code :isShell="items.shell">
+                        <Code :isShell="items.shell" :code="items.code">
                             <template #codetype>
                                 {{ items.codetype }}
                             </template>
                             <template #code>
-                                <span v-html="items.code"></span>
+                                <span class="codecolor" v-if="items.title == '注册'" v-html="codeView"></span>
+                                <span class="codecolor" v-else v-html="items.code"></span>
                             </template>
                         </Code>
                     </div>
@@ -197,7 +198,7 @@ const setupSteps = reactive<Array<setupStepsItems>>([
         title: "注册",
         subheading: "在安装完成后您还需要全局注册后才能正常使用",
         codetype: "main.ts",
-        code: codeView.value,
+        code: code.value,
         shell: false,
         istitle: false
     }
@@ -285,6 +286,10 @@ const setupSteps = reactive<Array<setupStepsItems>>([
     width: 70px;
     padding: 10px;
     text-align: center;
+}
+
+.codecolor {
+    color:rgb(0, 110, 255)
 }
 
 .bottom {

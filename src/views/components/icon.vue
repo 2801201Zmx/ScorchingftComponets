@@ -13,7 +13,9 @@
                 {{ item.title }}
             </div>
             <div class="allicon">
-                <span class="allicon-list" v-for="(icon, index) in item.components" :key="index">
+                <span class="allicon-list" v-for="(icon, index) in item.components" @click="CopyObject('#code', `<sf-icon>
+        <${icon} />
+    </sf-icon>`)" id="code" :key="index">
                     <sf-icon>
                         <component :is="icon" />
                     </sf-icon>
@@ -28,6 +30,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
+import CopyObject from '@/utils/copy';
 import ICON from '@/JSON/icon.json';
 
 </script>

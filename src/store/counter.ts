@@ -6,6 +6,8 @@ export const useCounterStore = defineStore('counter', () => {
   const headerLogo = ref<string>('/ComponetsICON_white.png');
 
   const codeHighlight = ref<string[]>([]);
+
+  const codeList = ref<string[]>([]);
   
-  return { isIndex, headerLogo, codeHighlight };
+  return { isIndex, headerLogo, codeHighlight, codeList };
 })

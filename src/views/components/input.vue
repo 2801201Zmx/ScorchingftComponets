@@ -18,7 +18,7 @@
                         <component v-for="(components, keys) in item.componentName" :is="components" v-bind="item.props[keys]"></component>
                     </div>
                     <div class="function">
-                        <sf-icon>
+                        <sf-icon @click="CopyObject('#code',count.codeList[item.id - 1])" id="code">
                             <CopyDocument />
                         </sf-icon>
                         <span class="cursor" title="查看代码" @click="viewCode(item.id - 1)">
@@ -41,6 +41,8 @@
 import { ref, onMounted, onBeforeMount } from 'vue';
 import 'highlight.js/styles/github.css';
 import InputView from '@/JSON/inputView.json';
+
+import CopyObject from '@/utils/copy';
 
 import inputCodeHighlight from '@/utils/codeHigh_input';
 
@@ -71,8 +73,7 @@ const count = useCounterStore();
 // 4. `stackoverflow-light.css` - Stack Overflow 风格  
 
 const codeBlocks = ref<(HTMLElement | null)[]>([]);
-const isClicked = ref<boolean>(true), isPassClicked = ref<boolean>(true);
-const EXAMPLE_COUNT = 2;
+const isClicked = ref<boolean>(true);
 let codeHeight = ref<number[]>([]);
 
 const maxHeight = ref<number[]>([]);

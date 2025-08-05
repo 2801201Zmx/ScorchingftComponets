@@ -2,6 +2,8 @@ import { ref, nextTick } from "vue";
 import { useCounterStore } from "@/store/counter";
 import hljs from 'highlight.js';
 
+const count = useCounterStore();
+
 const basicCodeSnippet = ref<string>(`
 <template>
     <sf-input v-model="input" style="width: 240px" placeholder="请输入内容" />
@@ -64,17 +66,17 @@ const passCodeSnippet = ref<string>(`
 </sc` + `ript>
 `);
 
-const codeList = ref<string[]>([
+count.codeList = ([
     basicCodeSnippet.value,
     disabledCodeSnippet.value,
     clearCodeSnippet.value,
     passCodeSnippet.value
-]);
+])
 
 export default function inputCodeHighlight(callback?: () => void): void {
     const count = useCounterStore();
 
-    codeList.value.forEach((code, index) => {
+    count.codeList.forEach((code, index) => {
         const highlightedCode = hljs.highlight(code, { language: 'html' }).value;
         count.codeHighlight[index] = highlightedCode;
     })

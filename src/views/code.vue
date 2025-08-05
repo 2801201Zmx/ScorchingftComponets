@@ -11,7 +11,7 @@
                 <slot name="code"></slot>
             </span>
             <span class="btn">
-                <Copybtn v-if="isHide" />
+                <Copybtn @click="CopyObject('#code',code)" id="code" v-if="isHide"/>
             </span>
         </div>
     </div>
@@ -20,11 +20,16 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import Copybtn from '@/views/Copy.vue';
+import CopyObject from '@/utils/copy'
 
 const props = defineProps({
     isShell: {
         type: Boolean,
         default: true
+    },
+    code: {
+        type: String,
+        default:''
     }
 })
 
