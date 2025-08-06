@@ -1,7 +1,7 @@
 {
   "type": "module",
   "name": "scorchingft-components",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "A Vue 3 component library",
   "keywords": [
     "vue",
@@ -9,11 +9,11 @@
     "ui",
     "typescript"
   ],
-  "author": "Your Name",
+  "author": "h幻想Gensou",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/scorchingft-components.git"
+    "url": "git+https://github.com/yourusername/scorchingft-components.git"
   },
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
@@ -31,8 +31,8 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "vite build && vue-tsc && npm run build:types",
-    "build:types": "vue-tsc --project tsconfig.build.json",
+    "build": "vite build && vue-tsc --noEmit && npm run build:types",
+    "build:types": "vue-tsc --declaration --emitDeclarationOnly --outDir dist/types",
     "preview": "vite preview",
     "build-only": "vite build",
     "type-check": "vue-tsc --build",
@@ -52,16 +52,20 @@
   },
   "devDependencies": {
     "@tsconfig/node22": "^22.0.2",
-    "@types/node": "^22.15.32",
+    "@types/node": "^22.16.2",
     "@vitejs/plugin-vue": "^6.0.0",
     "@vue/tsconfig": "^0.7.0",
     "npm-run-all2": "^8.0.4",
     "shiki": "^3.8.0",
     "typescript": "~5.8.0",
     "unplugin-vue-define-options": "3.0.0-beta.17",
-    "vite": "^7.0.0",
+    "vite": "^7.0.3",
     "vite-plugin-vue-devtools": "^7.7.7",
     "vue": "^3.5.17",
     "vue-tsc": "^2.2.10"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/scorchingft-components/issues"
+  },
+  "homepage": "https://github.com/yourusername/scorchingft-components#readme"
 }

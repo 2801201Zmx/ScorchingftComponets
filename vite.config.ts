@@ -3,16 +3,14 @@ import vue from '@vitejs/plugin-vue'
 import { fileURLToPath } from 'node:url'
 import { resolve } from 'node:path'
 
-export default defineConfig(async ({ command, mode }) => {
+export default defineConfig(({ mode }) => {
   const plugins: PluginOption[] = [vue()];
 
   if (mode === 'development') {
     try {
-      const devtoolsModule = await import('vite-plugin-vue-devtools');
-      const vueDevTools = devtoolsModule.default;
-
+      const vueDevTools = require('vite-plugin-vue-devtools').default;
       if (vueDevTools) {
-        plugins.push(vueDevTools() as PluginOption);
+        plugins.push(vueDevTools());
       }
     } catch (e) {
       console.error('DevTools 插件加载失败:', e);
@@ -25,20 +23,15 @@ export default defineConfig(async ({ command, mode }) => {
       lib: {
         entry: resolve(__dirname, 'src/index.ts'),
         name: 'ScorchingftComponents',
-        // 已修复：显式声明 format 为 string 类型
         fileName: (format: string) => `scorchingft-components.${format}.js`,
       },
       rollupOptions: {
         external: ['vue', 'vue-router'],
         output: {
+          exports: "named",
           globals: {
             vue: 'Vue',
             'vue-router': 'VueRouter'
-          },
-          manualChunks(id: string) {
-            if (id.includes('node_modules')) {
-              return 'vendor';
-            }
           },
           assetFileNames: (assetInfo: any) => {
             if (assetInfo.name === 'style.css') {
