@@ -12,7 +12,7 @@
                     {{ item.content }}
                 </div>
             </sf-card>
-            <sf-card size="46" @click="$router.push('/guide/start.html')">
+            <sf-card size="46" @click="$router.push('/guide/start')">
                     <span class="cursor">
                         <div>→</div>
                     </span>

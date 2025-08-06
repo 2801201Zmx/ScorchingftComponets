@@ -1,0 +1,71 @@
+{
+  "type": "module",
+  "name": "scorchingftui",
+  "version": "1.0.0",
+  "description": "A Vue 3 component library",
+  "keywords": [
+    "vue",
+    "components",
+    "ui",
+    "typescript"
+  ],
+  "author": "幻想Gensou",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/2801201Zmx/ScorchingftComponets.git"
+  },
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.cjs.js"
+    },
+    "./style.css": "./dist/style.css"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && vue-tsc --noEmit && npm run build:types",
+    "build:types": "vue-tsc --declaration --emitDeclarationOnly --outDir dist/types",
+    "preview": "vite preview",
+    "build-only": "vite build",
+    "type-check": "vue-tsc --build",
+    "prepublishOnly": "npm run build"
+  },
+  "peerDependencies": {
+    "vue": "^3.0.0"
+  },
+  "dependencies": {
+    "@types/prismjs": "^1.26.5",
+    "clipboard": "^2.0.11",
+    "highlight.js": "^11.11.1",
+    "pinia": "^3.0.3",
+    "prism-themes": "^1.9.0",
+    "prismjs": "^1.30.0",
+    "vue-router": "^4.5.1"
+  },
+  "devDependencies": {
+    "@tsconfig/node22": "^22.0.2",
+    "@types/node": "^22.16.2",
+    "@vitejs/plugin-vue": "^6.0.0",
+    "@vue/tsconfig": "^0.7.0",
+    "npm-run-all2": "^8.0.4",
+    "shiki": "^3.8.0",
+    "typescript": "~5.8.0",
+    "unplugin-vue-define-options": "3.0.0-beta.17",
+    "vite": "^7.0.3",
+    "vite-plugin-vue-devtools": "^7.7.7",
+    "vue": "^3.5.17",
+    "vue-tsc": "^2.2.10"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/scorchingft-components/issues"
+  },
+  "homepage": "https://github.com/yourusername/scorchingft-components#readme"
+}

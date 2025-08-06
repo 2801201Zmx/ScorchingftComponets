@@ -1,14 +1,4 @@
 {
-  "extends": "./tsconfig.json",
-  "compilerOptions": {
-    "declaration": true,
-    "emitDeclarationOnly": true,
-    "outDir": "dist/types"
-  },
-  "include": [
-    "src/index.ts",
-    "src/scorchingft/**/*"
-  ],
   "exclude": [
     "node_modules",
     "src/views",

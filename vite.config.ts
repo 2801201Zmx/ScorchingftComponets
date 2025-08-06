@@ -19,29 +19,34 @@ export default defineConfig(({ mode }) => {
 
   return {
     plugins,
+    // build: {
+    //   lib: {
+    //     entry: resolve(__dirname, 'src/index.ts'),
+    //     name: 'ScorchingftComponents',
+    //     fileName: (format: string) => `scorchingft-components.${format}.js`,
+    //   },
+    //   rollupOptions: {
+    //     external: ['vue', 'vue-router'],
+    //     output: {
+    //       exports: "named",
+    //       globals: {
+    //         vue: 'Vue',
+    //         'vue-router': 'VueRouter'
+    //       },
+    //       assetFileNames: (assetInfo: any) => {
+    //         if (assetInfo.name === 'style.css') {
+    //           return 'style.css'
+    //         }
+    //         return assetInfo.name
+    //       }
+    //     }
+    //   },
+    //   cssCodeSplit: false,
+    //   sourcemap: true
+    // },
     build: {
-      lib: {
-        entry: resolve(__dirname, 'src/index.ts'),
-        name: 'ScorchingftComponents',
-        fileName: (format: string) => `scorchingft-components.${format}.js`,
-      },
-      rollupOptions: {
-        external: ['vue', 'vue-router'],
-        output: {
-          exports: "named",
-          globals: {
-            vue: 'Vue',
-            'vue-router': 'VueRouter'
-          },
-          assetFileNames: (assetInfo: any) => {
-            if (assetInfo.name === 'style.css') {
-              return 'style.css'
-            }
-            return assetInfo.name
-          }
-        }
-      },
-      cssCodeSplit: false,
+      // 保持默认的构建配置即可
+      outDir: 'dist',
       sourcemap: true
     },
     resolve: {

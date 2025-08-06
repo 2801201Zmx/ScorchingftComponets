@@ -28,7 +28,8 @@ const router = createRouter({
               name: 'guideDetail',
               component: () => import('@/views/Loader.vue'),
               props: (route) => ({
-                componentPath: `./guide/${route.params.guideName}.vue`
+                componentPath: route.params.guideName,
+                componentType: 'guide'
               })
             }
           ]
@@ -48,7 +49,8 @@ const router = createRouter({
               name: 'componentDetail',
               component: () => import('@/views/Loader.vue'),
               props: (route) => ({
-                componentPath: `./components/${route.params.componentName}.vue`
+                componentPath: route.params.componentName,
+                componentType: 'components'
               })
             }
           ]
@@ -64,4 +66,3 @@ const router = createRouter({
 })
 
 export default router
-
