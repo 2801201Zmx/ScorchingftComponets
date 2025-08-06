@@ -190,7 +190,7 @@ const setupSteps = reactive<Array<setupStepsItems>>([
         title: "安装",
         subheading: "可以通过一下方式将 Scorchingft 组件库安装到您的项目中：",
         codetype: "shell",
-        code: installMethods[0].name + ' install scorchingft-components',
+        code: installMethods[0].name + ' install scorchingftUI',
         shell: true,
         istitle: true
     },
