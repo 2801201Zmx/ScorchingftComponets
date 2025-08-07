@@ -17,35 +17,40 @@ export default defineConfig(({ mode }) => {
     }
   }
 
+  // 库模式构建配置
+  const buildConfig = {
+    lib: {
+    entry: resolve(__dirname, 'src/entry.ts'), // 使用新的入口文件
+    name: 'ScorchingftComponents',
+    formats: ['es', 'umd'],
+    fileName: (format: string) => {
+      if (format === 'es') return 'index.esm.js';
+      if (format === 'umd') return 'index.umd.js';
+      return `scorchingft-components.${format}.js`;
+    },
+  },
+    rollupOptions: {
+      external: ['vue'],
+      output: {
+        exports: 'named' as const, // 显式指定为字面量类型
+        globals: {
+          vue: 'Vue'
+        },
+        assetFileNames: (assetInfo: any) => {
+          if (assetInfo.name === 'style.css') {
+            return 'index.css'
+          }
+          return assetInfo.name
+        }
+      }
+    },
+    cssCodeSplit: false,
+    sourcemap: true
+  };
+
   return {
     plugins,
-    // build: {
-    //   lib: {
-    //     entry: resolve(__dirname, 'src/index.ts'),
-    //     name: 'ScorchingftComponents',
-    //     fileName: (format: string) => `scorchingft-components.${format}.js`,
-    //   },
-    //   rollupOptions: {
-    //     external: ['vue', 'vue-router'],
-    //     output: {
-    //       exports: "named",
-    //       globals: {
-    //         vue: 'Vue',
-    //         'vue-router': 'VueRouter'
-    //       },
-    //       assetFileNames: (assetInfo: any) => {
-    //         if (assetInfo.name === 'style.css') {
-    //           return 'style.css'
-    //         }
-    //         return assetInfo.name
-    //       }
-    //     }
-    //   },
-    //   cssCodeSplit: false,
-    //   sourcemap: true
-    // },
-    build: {
-      // 保持默认的构建配置即可
+    build: mode === 'production' ? buildConfig : {
       outDir: 'dist',
       sourcemap: true
     },
