@@ -1,7 +1,6 @@
-// Vue 插件安装函数
 import type { App } from 'vue'
 import '@/scorchingft/style/index.css'
-// 导入组件
+
 import SFCard from '@/scorchingft/card.vue'
 import SFInput from '@/scorchingft/input.vue'
 import SFIcon from '@/scorchingft/icon.vue'
@@ -10,12 +9,11 @@ import type InputProps from '@/scorchingft/input.vue'
 import type CardProps from '@/scorchingft/card.vue'
 import type IconProps from '@/scorchingft/icon.vue'
 
-// 导出组件
+
 export {
   SFInput, SFCard, SFIcon
 }
 
-// 导出组件类型
 export type {
   InputProps, CardProps, IconProps
 }
@@ -38,7 +36,6 @@ export default {
   install(app: App) {
     Object.entries(components).forEach(([name, component]) => {
       const kebabName = `sf-${toKebabCase(name)}`;
-      // console.log(`注册组件: ${name} -> ${kebabName}`); // 添加日志用于调试
       app.component(kebabName, component);
     });
   }

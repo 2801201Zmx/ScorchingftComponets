@@ -9,13 +9,13 @@
 
 ```bash
 # 使用 npm
-npm install scorchingft-components
+npm install scorchingftui
 
 # 使用 pnpm
-pnpm add scorchingft-components
+pnpm install scorchingftui
 
 # 使用 yarn
-yarn add scorchingft-components
+yarn add scorchingftui
 ```
 
 ## 使用

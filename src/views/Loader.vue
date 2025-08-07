@@ -18,7 +18,6 @@ const moduleMaps: Record<string, Record<string, () => Promise<any>>> = {
 watch(() => props.componentPath, async (componentName) => {
   try {
     loadError.value = null;
-    console.log('Loading component:', componentName, 'Type:', props.componentType);
     
     let moduleLoader: (() => Promise<any>) | undefined;
     let targetModuleMap: Record<string, () => Promise<any>> | undefined;
@@ -34,7 +33,6 @@ watch(() => props.componentPath, async (componentName) => {
         const fileName = path.split('/').pop()?.replace('.vue', '');
         if (fileName === componentName) {
           moduleLoader = loader;
-          console.log('Found component in specific type map:', path);
           break;
         }
       }
@@ -47,7 +45,6 @@ watch(() => props.componentPath, async (componentName) => {
           const fileName = path.split('/').pop()?.replace('.vue', '');
           if (fileName === componentName) {
             moduleLoader = loader;
-            console.log('Found component in general search:', path);
             break;
           }
         }

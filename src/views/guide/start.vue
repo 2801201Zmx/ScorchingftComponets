@@ -148,7 +148,7 @@ const borderbottom = ref<Array<string>>([]);
 borderbottom.value[0] = '3px solid #ca92ff';
 
 function changeMethod(index: number) {
-    setupSteps[0].code = installMethods[index - 1].name + ' install scorchingft-components';
+    setupSteps[0].code = installMethods[index - 1].name + ' install scorchingftui';
     borderbottom.value[index - 1] = '3px solid #ca92ff';
 
     if (id.value != index - 1) {
@@ -190,7 +190,7 @@ const setupSteps = reactive<Array<setupStepsItems>>([
         title: "安装",
         subheading: "可以通过一下方式将 Scorchingft 组件库安装到您的项目中：",
         codetype: "shell",
-        code: installMethods[0].name + ' install scorchingftUI',
+        code: installMethods[0].name + ' install scorchingftui',
         shell: true,
         istitle: true
     },

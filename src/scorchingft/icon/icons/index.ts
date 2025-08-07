@@ -1,0 +1,8 @@
+export { default as View } from '../view.vue'
+export { default as Hide } from '../hide.vue'
+export { default as CircleClose } from '../circleclose.vue'
+export { default as CircleCloseFilled } from '../circleclosefilled.vue'
+export { default as CopyDocument } from '../copydocument.vue'
+export { default as GitHubDark } from '../github-dark.vue'
+export { default as GitHubLight } from '../github-light.vue'
+export { default as Document } from '../document.vue'
