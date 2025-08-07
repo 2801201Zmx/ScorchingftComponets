@@ -1,7 +1,7 @@
 {
   "type": "module",
   "name": "scorchingftui",
-  "version": "1.0.4",
+  "version": "1.0.7",
   "description": "A Vue 3 component library",
   "keywords": [
     "vue",
@@ -15,30 +15,13 @@
     "type": "git",
     "url": "git+https://github.com/2801201Zmx/ScorchingftComponets.git"
   },
-  "main": "./dist/index.umd.js",
-  "module": "./dist/index.esm.js",
-  "types": "es/index.d.ts",
-  "files": [
-    "dist",
-    "es",
-    "lib"
-  ],
-  "exports": {
-    ".": {
-      "import": "./dist/index.esm.js",
-      "require": "./dist/index.umd.js"
-    },
-    "./style.css": "./dist/style.css"
-  },
+  "homepage": "dist",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && vue-tsc --noEmit && npm run build:types",
-    "build:lib": "vite build --mode production",
-    "build:types": "vue-tsc --declaration --emitDeclarationOnly --outDir dist/types",
+    "build": "vite build",
     "preview": "vite preview",
     "build-only": "vite build",
-    "type-check": "vue-tsc --build",
-    "prepublishOnly": "npm run build"
+    "type-check": "vue-tsc --build"
   },
   "peerDependencies": {
     "vue": "^3.0.0"
@@ -68,6 +51,5 @@
   },
   "bugs": {
     "url": "https://github.com/yourusername/scorchingft-components/issues"
-  },
-  "homepage": "https://github.com/yourusername/scorchingft-components#readme"
+  }
 }

@@ -194,7 +194,7 @@ const unpkgCodeView = ref<string>(`&lt;head&gt;
     <span style="color:#878787;">&lt;!-- Import Vue 3 --&gt;</span>
     &lt;script src="//unpkg.com/vue@3"&gt;&lt;/` + `script&gt;
     <span style="color:#878787;">&lt;!-- Import component library --&gt</span>
-    &lt;script src="https://unpkg.com/scorchingftui@latest/dist/index.js"&gt;&lt;/script&gt;
+    &lt;script src="//unpkg.com/scorchingftui@latest/dist/index.js"&gt;&lt;/script&gt;
 &lt;/head&gt;`);
 
 const jsDelivrCode = ref<string>(`<head>
@@ -203,7 +203,7 @@ const jsDelivrCode = ref<string>(`<head>
   <!-- Import Vue 3 -->
   <script src="//unpkg.com/vue@3"></` + `script>
   <!-- Import component library -->
-  <script src="//cbdn.jsdelivr.net/npm/scorchingftui@latest/dist/index.js></` + `script>
+  <script src="//cdn.jsdelivr.net/npm/scorchingftui@latest/dist/index.js"></` + `script>
 </` + `head>`);
 
 const jsDelivrCodeView = ref<string>(`&lt;head&gt;
@@ -212,7 +212,7 @@ const jsDelivrCodeView = ref<string>(`&lt;head&gt;
     <span style="color:#878787;">&lt;!-- Import Vue 3 --&gt;</span>
     &lt;script src="//unpkg.com/vue@3"&gt;&lt;/` + `script&gt;
     <span style="color:#878787;">&lt;!-- Import component library --&gt</span>
-    &lt;script src="//cbdn.jsdelivr.net/npm/scorchingftui@latest/dist/index.js"&gt;&lt;/script>&gt;
+    &lt;script src="//cdn.jsdelivr.net/npm/scorchingftui@latest/dist/index.js"&gt;&lt;/script>&gt;
 &lt;/head&gt;`);
 
 const allCode = ref<string>(`import { createApp } from 'vue'
