@@ -1,8 +1,9 @@
 <template>
     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 2048 2048"
         style="enable-background:new 0 0 2048 2048;" xml:space="preserve">
-        <path class="st0" d="M1291,688v1091H200V688H1291 M1363,616H128v1235h1235V616L1363,616z" />
-        <polyline class="st1" points="514,616 514,331 1729,331 1729,1566 1363,1566 " />
+        <polyline class="st0" points="686,949 298,1136 686,1371 " />
+        <polyline class="st0" points="1288,949 1676,1136 1288,1371 " />
+        <line class="st0" x1="1206" y1="831" x2="966" y2="1436" />
     </svg>
 </template>
 
@@ -15,10 +16,6 @@ svg {
 }
 
 .st0 {
-    fill: #A155FF;
-}
-
-.st1 {
     fill: none;
     stroke: #A155FF;
     stroke-width: 72;

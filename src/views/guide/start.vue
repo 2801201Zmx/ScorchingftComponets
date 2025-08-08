@@ -63,7 +63,10 @@
                         <div class="title" v-if="items.istitle">
                             <span class="cursor" v-for="item in installMethods"
                                 :style="{ borderBottom: borderbottom[item.id - 1] }" @click="changeMethod(item.id)">
-                                <img :src="item.img" alt="">{{ item.name }}
+                                <sf-icon>
+                                    <component :is="item.name"></component>
+                                </sf-icon>
+                                {{ item.name }}
                             </span>
                         </div>
                         <Code :isShell="items.shell" :code="items.code">
@@ -133,25 +136,21 @@ const compatibility = reactive<Array<Compatibility>>([
 
 interface InstallMethodsItem {
     id: number,
-    img: string,
     name: string
 }
 
 const installMethods = reactive<Array<InstallMethodsItem>>([
     {
         "id": 1,
-        "img": '/npm.svg',
         "name": 'npm'
     },
     {
         "id": 2,
-        "img": '/yarn.svg',
-        "name": 'yarn'
+        "name": 'pnpm'
     },
     {
         "id": 3,
-        "img": '/pnpm.svg',
-        "name": 'pnpm'
+        "name": 'yarn'
     }
 ]);
 
@@ -392,11 +391,12 @@ p a:hover {
 .method .title {
     padding: 0 20px;
     border-bottom: 1px solid #ccc;
+    flex-wrap: nowrap;
 }
 
 .title span {
     display: inline-block;
-    width: 70px;
+    width: 80px;
     padding: 10px;
     text-align: center;
 }

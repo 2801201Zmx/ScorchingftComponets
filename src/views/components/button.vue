@@ -1,6 +1,6 @@
 <template>
    <span>
-     组件开发中，敬请期待 <img src="/loading.gif" alt=""></img>
+     组件开发中，敬请期待 <img src="@/assets/images/loading.gif" alt=""></img>
    </span>
 </template>
 

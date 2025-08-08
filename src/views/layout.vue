@@ -6,7 +6,9 @@
                 <img :src="count.headerLogo" alt="">
             </span>
             <a class="githubicon cursor" href="https://github.com/2801201Zmx/ScorchingftComponets" target="_blank">
-                <img src="/github-mark.png" alt="">
+                <sf-icon>
+                    <GitHubDark />
+                </sf-icon>
             </a>
         </div>
         <div class="content">
@@ -19,6 +21,7 @@
 import { useRouter } from 'vue-router';
 import { useCounterStore } from '@/store/counter';
 import { getPathName } from '@/utils/getpathname';
+import { GitHubDark } from '@/scorchingft/icon/icon';
 
 const count = useCounterStore();
 

@@ -17,14 +17,21 @@
       v-if="shouldShowToggle" 
       @click="changeView"
     >
-      <img :src="passwordVisibilityIcon" alt="">
+      <sf-icon v-if="showPassword">
+        <Hide />
+      </sf-icon>
+      <sf-icon v-else>
+        <View />
+      </sf-icon>
     </span>
     <span
       class="cursor clear-icon"
       v-if="clearable"
       @click="clearInput"
     >
-      <img src="/circleclose.svg" alt="">
+      <sf-icon>
+        <Circleclose />
+      </sf-icon>
     </span>
   </div>
 </template>
@@ -63,10 +70,6 @@ const showPassword = ref(false)
 
 const shouldShowToggle = computed(() => {
   return props.showPassword && props.type === 'password'
-})
-
-const passwordVisibilityIcon = computed(() => {
-  return showPassword.value ? '/View.svg' : '/Hide.svg'
 })
 
 // 使用一个响应式的 currentType 而不是 computed

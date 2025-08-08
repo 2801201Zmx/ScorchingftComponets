@@ -15,18 +15,20 @@
                 </div>
                 <div class="example">
                     <div class="components">
-                        <component v-for="(components, keys) in item.componentName" :is="components" v-bind="item.props[keys]"></component>
+                        <component v-for="(components, keys) in item.componentName" :is="components"
+                            v-bind="item.props[keys]"></component>
                     </div>
                     <div class="function">
-                        <sf-icon @click="CopyObject('#code',count.codeList[item.id - 1])" id="code">
+                        <sf-icon size="30" @click="CopyObject('#code', count.codeList[item.id - 1])" id="code">
                             <CopyDocument />
                         </sf-icon>
                         <span class="cursor" title="查看代码" @click="viewCode(item.id - 1)">
-                            <img src="/code.svg" alt="">
+                            <sf-icon size="35">
+                                <Code />
+                            </sf-icon>
                         </span>
                     </div>
-                    <div class="code" :style="{ height: codeHeight[item.id - 1] + 'px' }"
-                        ref="codeBlocks">
+                    <div class="code" :style="{ height: codeHeight[item.id - 1] + 'px' }" ref="codeBlocks">
                         <pre>
                             <code v-html="count.codeHighlight[item.id - 1]"></code>
                         </pre>
