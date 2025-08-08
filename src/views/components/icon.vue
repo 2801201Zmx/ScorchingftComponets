@@ -37,8 +37,8 @@
             </div>
             <div class="allicon">
                 <span class="allicon-list" v-for="(icon, index) in item.components" @click="CopyObject('#code', `<sf-icon>
-        <${icon} />
-    </sf-icon>`)" id="code" :key="index">
+            <${icon} />
+        </sf-icon>`)" id="code" :key="index">
                     <sf-icon>
                         <component :is="icon" />
                     </sf-icon>

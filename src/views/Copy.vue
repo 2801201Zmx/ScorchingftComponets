@@ -1,7 +1,7 @@
 <template>
     <div class="documentcopy">
         <sf-icon>
-            <Document />
+            <Documentation />
         </sf-icon>
     </div>
 </template>
