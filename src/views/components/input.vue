@@ -23,7 +23,7 @@
                             <CopyDocument />
                         </sf-icon>
                         <span class="cursor" title="查看代码" @click="viewCode(item.id - 1)">
-                            <sf-icon size="35">
+                            <sf-icon>
                                 <Code />
                             </sf-icon>
                         </span>
