@@ -27,6 +27,10 @@
             {
                 "title": "Input 输入框",
                 "path": "input"
+            },
+            {
+                "title": "form 表单",
+                "path": "form"
             }
         ]
     },

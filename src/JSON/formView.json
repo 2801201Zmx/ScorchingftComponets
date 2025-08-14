@@ -1,0 +1,108 @@
+[
+    {
+        "id": 1,
+        "title": "基础用法",
+        "componentName": ["sf-form"],
+        "props": [
+            {
+                "style": {
+                    "width": "600px",
+                    "height": "300px"
+                },
+                "model": {
+                    "name": "",
+                    "email": "",
+                    "age": ""
+                },
+                "rules": {
+                    "name": [
+                        { "required": true, "message": "请输入姓名", "trigger": "blur" }
+                    ],
+                    "email": [
+                        { "required": true, "message": "请输入邮箱", "trigger": "blur" },
+                        { "validator": "email", "message": "请输入正确的邮箱格式", "trigger": "blur" }
+                    ],
+                    "age": [
+                        { "required": true, "message": "请输入年龄", "trigger": "blur" },
+                        { "validator": "number", "message": "年龄必须是数字", "trigger": "blur" }
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "title": "标签位置",
+        "componentName": ["sf-form"],
+        "props": [
+            {
+                "style": {
+                    "width": "600px",
+                    "height": "300px"
+                },
+                "labelPosition": "top",
+                "model": {
+                    "username": "",
+                    "password": ""
+                },
+                "rules": {
+                    "username": [
+                        { "required": true, "message": "请输入用户名", "trigger": "blur" }
+                    ],
+                    "password": [
+                        { "required": true, "message": "请输入密码", "trigger": "blur" }
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "title": "尺寸变体",
+        "componentName": ["sf-form"],
+        "props": [
+            {
+                "style": {
+                    "width": "600px",
+                    "height": "300px"
+                },
+                "size": "small",
+                "model": {
+                    "title": "",
+                    "description": ""
+                },
+                "rules": {
+                    "title": [
+                        { "required": true, "message": "请输入标题", "trigger": "blur" }
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "title": "自定义验证",
+        "componentName": ["sf-form"],
+        "props": [
+            {
+                "style": {
+                    "width": "600px",
+                    "height": "300px"
+                },
+                "model": {
+                    "phone": "",
+                    "website": ""
+                },
+                "rules": {
+                    "phone": [
+                        { "required": true, "message": "请输入手机号", "trigger": "blur" },
+                        { "validator": "phone", "message": "请输入正确的手机号格式", "trigger": "blur" }
+                    ],
+                    "website": [
+                        { "validator": "url", "message": "请输入正确的网址格式", "trigger": "blur" }
+                    ]
+                }
+            }
+        ]
+    }
+] 

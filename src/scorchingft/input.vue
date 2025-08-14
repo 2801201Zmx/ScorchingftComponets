@@ -1,5 +1,5 @@
 <template>
-  <div class="input-container" :class="{ 'has-icon': shouldShowToggle }">
+  <div class="sf-input" :class="{ 'has-icon': shouldShowToggle }">
     <input 
       :style="style" 
       ref="inputRef"
@@ -131,12 +131,12 @@ function clearInput() {
 </script>
 
 <style scoped>
-.input-container {
+.sf-input {
   position: relative;
   width: fit-content;
 }
 
-.input-container input {
+.sf-input input {
   padding: 8px 12px;
   border: 1px solid #c0c0c0;
   border-radius: 4px;
@@ -144,17 +144,17 @@ function clearInput() {
   transition: border-color 0.3s;
 }
 
-.input-container input:focus {
+.sf-input input:focus {
   border-color: #ce9bfd;
   outline: none;
 }
 
-.input-container input:disabled {
+.sf-input input:disabled {
   background-color: #f5f7fa;
   cursor: not-allowed;
 }
 
-.input-container span {
+.sf-input span {
   display: flex;
   position: absolute;
   top: 50%;
@@ -164,12 +164,12 @@ function clearInput() {
   height: 20px;
 }
 
-.input-container span img {
+.sf-input span img {
   width: 100%;
   height: 100%;
 }
 
-.input-container .clear-icon {
+.sf-input .clear-icon {
   width: 15px;
   height: 15px;
 }
