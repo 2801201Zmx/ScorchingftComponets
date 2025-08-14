@@ -6,24 +6,26 @@ import SFInput from '@/scorchingft/input.vue'
 import SFIcon from '@/scorchingft/icon.vue'
 import SFForm from '@/scorchingft/form.vue'
 import SFFormItem from '@/scorchingft/form-item.vue'
+import SFButton from '@/scorchingft/button.vue'
 
 import type InputProps from '@/scorchingft/input.vue'
 import type CardProps from '@/scorchingft/card.vue'
 import type IconProps from '@/scorchingft/icon.vue'
 import type FormProps from '@/scorchingft/form.vue'
 import type FormItemProps from '@/scorchingft/form-item.vue'
+import type ButtonProps from '@/scorchingft/button.vue'
 
 
 export {
-  SFInput, SFCard, SFIcon, SFForm, SFFormItem
+  SFInput, SFCard, SFIcon, SFForm, SFFormItem, SFButton
 }
 
 export type {
-  InputProps, CardProps, IconProps, FormProps, FormItemProps
+  InputProps, CardProps, IconProps, FormProps, FormItemProps, ButtonProps
 }
 
 const components = {
-  SFInput, SFCard, SFIcon, SFForm, SFFormItem
+  SFInput, SFCard, SFIcon, SFForm, SFFormItem, SFButton
 }
 
 const toKebabCase = (str: string) => {

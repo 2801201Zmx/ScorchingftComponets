@@ -20,12 +20,12 @@
     </div>
     <div v-if="showSubmit" class="form-actions">
       <slot name="actions">
-        <button type="submit" class="submit-btn" :disabled="loading">
+        <sf-button type="submit" :disabled="loading">
           {{ submitText }}
-        </button>
-        <button v-if="showReset" type="button" class="reset-btn" @click="handleReset">
+        </sf-button>
+        <sf-button v-if="showReset" @click="handleReset">
           {{ resetText }}
-        </button>
+        </sf-button>
       </slot>
     </div>
   </form>

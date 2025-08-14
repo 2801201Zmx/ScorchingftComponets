@@ -288,9 +288,4 @@ label {
 .sf-form-item.size-large .form-error {
   font-size: 13px;
 }
-
-/* 状态样式 */
-.sf-form-item.is-error .form-label {
-  /* 移除label变红的样式，保持原有颜色 */
-}
 </style> 

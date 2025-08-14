@@ -1,0 +1,108 @@
+[
+    {
+        "id": 1,
+        "content": "默认按钮",
+        "title": "基础用法",
+        "componentName": [
+            "sf-button",
+            "sf-button",
+            "sf-button",
+            "sf-button",
+            "sf-button",
+            "sf-button"
+        ],
+        "props": [
+            {},
+            { "type": "primary" },
+            { "type": "success" },
+            { "type": "warning" },
+            { "type": "danger" },
+            { "type": "info" }
+        ]
+    },
+    {
+        "id": 2,
+        "content": "朴素按钮",
+        "title": "朴素按钮",
+        "componentName": [
+            "sf-button",
+            "sf-button",
+            "sf-button",
+            "sf-button",
+            "sf-button",
+            "sf-button"
+        ],
+        "props": [
+            { "plain": true },
+            { "type": "primary", "plain": true },
+            { "type": "success", "plain": true },
+            { "type": "warning", "plain": true },
+            { "type": "danger", "plain": true },
+            { "type": "info", "plain": true }
+        ]
+    },
+    {
+        "id": 3,
+        "content": "不同尺寸",
+        "title": "按钮尺寸",
+        "componentName": [
+            "sf-button",
+            "sf-button",
+            "sf-button",
+            "sf-button",
+            "sf-button",
+            "sf-button"
+        ],
+        "props": [
+            { "size": "large" },
+            {},
+            { "size": "small" },
+            { "type": "primary", "size": "large" },
+            { "type": "primary" },
+            { "type": "primary", "size": "small" }
+        ]
+    },
+    {
+        "id": 4,
+        "content": "禁用状态",
+        "title": "禁用状态",
+        "componentName": [
+            "sf-button",
+            "sf-button",
+            "sf-button"
+        ],
+        "props": [
+            { "disabled": true },
+            { "type": "primary", "disabled": true },
+            { "type": "success", "disabled": true }
+        ]
+    },
+    {
+        "id": 5,
+        "content": "文字按钮",
+        "title": "文字按钮",
+        "componentName": [
+            "sf-button",
+            "sf-button"
+        ],
+        "props": [
+            { "text": true },
+            { "text": true, "disabled": true }
+        ]
+    },
+    {
+        "id": 6,
+        "content": "圆角按钮",
+        "title": "圆角按钮",
+        "componentName": [
+            "sf-button",
+            "sf-button",
+            "sf-button"
+        ],
+        "props": [
+            { "round": true },
+            { "type": "primary", "round": true },
+            { "type": "success", "round": true }
+        ]
+    }
+]
