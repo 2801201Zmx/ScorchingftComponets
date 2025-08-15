@@ -45,7 +45,7 @@
 <script setup lang="ts">
 import { ref, reactive, onMounted } from 'vue';
 import { useCounterStore } from '@/store/counter';
-
+import 'highlight.js/styles/github.css';
 import buttonView from '@/JSON/buttonView.json';
 import buttonCodeHighlight from '@/utils/codeHigh_button';
 import CopyObject from '@/utils/copy';
