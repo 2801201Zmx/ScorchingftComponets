@@ -1,12 +1,35 @@
 <template>
     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 2048 2048"
         style="enable-background:new 0 0 2048 2048;" xml:space="preserve">
-        <path class="st0" d="M1024.5,19C469.7,19,20,468.7,20,1023.5S469.7,2028,1024.5,2028S2029,1578.3,2029,1023.5S1579.3,19,1024.5,19z
+        <path :fill="fill" :stroke="stroke" :stroke-width="strokeWidth" :stroke-miterlimit="strokeMiterlimit" d="M1024.5,19C469.7,19,20,468.7,20,1023.5S469.7,2028,1024.5,2028S2029,1578.3,2029,1023.5S1579.3,19,1024.5,19z
 	 M1539.3,1694.4C1515,1709,1485,1666,1485,1666l-435.5-642.9L614,1666c0,0-32,43-54.3,28.4s6.6-60.7,6.6-60.7l448.4-661.9
 	L563.4,305.5c0,0-25.9-41.7-3.7-57.1c22.3-15.4,51.3,24.8,51.3,24.8l438.4,647.2l438.4-647.2c0,0,29.1-38.2,51.3-24.8
 	c22.3,13.4-3.7,57.1-3.7,57.1l-451.3,666.2l448.4,661.9C1532.7,1633.6,1563.6,1679.7,1539.3,1694.4L1539.3,1694.4z" />
     </svg>
 </template>
+
+<script setup lang="ts">
+
+const props = defineProps({
+    fill: {
+        type: String,
+        default: '#CE9BFD'
+    },
+    stroke: {
+        type: String,
+        default: 'none'
+    },
+    strokeWidth: {
+        type: Number,
+        default: '72'
+    },
+    strokeMiterlimit: {
+        type: Number,
+        default: 10
+    },
+})
+
+</script>
 
 <style scoped>
 svg {
@@ -14,9 +37,5 @@ svg {
     height: 100%;
     object-fit: contain;
     object-position: center;
-}
-
-.st0 {
-    fill: #CE9BFD;
 }
 </style>
