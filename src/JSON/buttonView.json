@@ -51,6 +51,9 @@
             "sf-button",
             "sf-button",
             "sf-button",
+            "sf-button",
+            "sf-button",
+            "sf-button",
             "sf-button"
         ],
         "props": [
@@ -59,7 +62,10 @@
             { "size": "small" },
             { "type": "primary", "size": "large" },
             { "type": "primary" },
-            { "type": "primary", "size": "small" }
+            { "type": "primary", "size": "small" },
+            { "round": true, "size": "large", "type": "warning" },
+            { "round": true, "type": "warning" },
+            { "round": true, "size": "small", "type": "warning"  }
         ]
     },
     {

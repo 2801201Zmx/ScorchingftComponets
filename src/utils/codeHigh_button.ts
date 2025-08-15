@@ -38,6 +38,9 @@ const sizeCodeSnippet = `
   <sf-button type="primary" size="large">大型按钮</sf-button>
   <sf-button type="primary">默认按钮</sf-button>
   <sf-button type="primary" size="small">小型按钮</sf-button>
+  <sf-button "type":"warning" round size="large">大型按钮</sf-button>
+  <sf-button "type":"warning" round>默认按钮</sf-button>
+  <sf-button "type":"warning" round size="small">小型按钮</sf-button>
 </template>`;
 
 const disabledCodeSnippet = `
