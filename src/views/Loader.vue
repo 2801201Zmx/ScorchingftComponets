@@ -18,15 +18,15 @@ const moduleMaps: Record<string, Record<string, () => Promise<any>>> = {
 watch(() => props.componentPath, async (componentName) => {
   try {
     loadError.value = null;
-    
+
     let moduleLoader: (() => Promise<any>) | undefined;
     let targetModuleMap: Record<string, () => Promise<any>> | undefined;
-    
+
     // 根据组件类型选择对应的模块映射
     if (props.componentType && moduleMaps[props.componentType]) {
       targetModuleMap = moduleMaps[props.componentType];
     }
-    
+
     // 如果指定了类型，直接在对应类型中查找
     if (targetModuleMap) {
       for (const [path, loader] of Object.entries(targetModuleMap)) {
@@ -37,7 +37,7 @@ watch(() => props.componentPath, async (componentName) => {
         }
       }
     }
-    
+
     // 如果没有找到且没有指定类型，或者指定了类型但没找到，则在所有映射中查找
     if (!moduleLoader) {
       for (const modules of Object.values(moduleMaps)) {
@@ -51,7 +51,7 @@ watch(() => props.componentPath, async (componentName) => {
         if (moduleLoader) break;
       }
     }
-    
+
     if (moduleLoader) {
       const module = await moduleLoader();
       dynamicComponent.value = module.default;
@@ -68,8 +68,15 @@ watch(() => props.componentPath, async (componentName) => {
 
 <template>
   <component :is="dynamicComponent" v-if="dynamicComponent && !loadError" />
-  <div v-else-if="loadError" class="error">组件加载失败: {{ loadError }}</div>
-  <div v-else class="loading">组件加载中...</div>
+  <div v-else-if="loadError" class="error">
+    <sf-icon fill="red">
+      <CircleCloseFilled />
+    </sf-icon>
+    组件加载失败: {{ loadError }}
+  </div>
+  <div v-else class="loading">
+    组件加载中...<img src="@/assets/images/loading.gif" alt=""></img>
+    </div>
 </template>
 
 <style scoped>
@@ -80,7 +87,14 @@ watch(() => props.componentPath, async (componentName) => {
 }
 
 .loading {
-  color: #888;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--topic-color-text);
 }
 
 .error {

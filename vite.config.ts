@@ -45,7 +45,6 @@ export default defineConfig(({ mode }) => {
     //   sourcemap: true
     // },
     build: {
-      // 保持默认的构建配置即可
       outDir: 'dist',
       sourcemap: true
     },
