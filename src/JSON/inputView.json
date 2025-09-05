@@ -46,5 +46,30 @@
             "showPassword": true
             }
         ]
+    },
+    {
+        "id": 5,
+        "title": "默认文本框",
+        "componentName": ["sf-textarea"],
+        "props":[
+            {
+                "style": "width: 240px",
+                "placeholder": "请输入内容",
+                "rows": 4
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "title": "固定大小文本框",
+        "componentName": ["sf-textarea"],
+        "props":[
+            {
+                "style": "width: 240px; resize: none;",
+                "placeholder": "请输入内容",
+                "rows": 4,
+                "cols": 30
+            }
+        ]
     }
 ]

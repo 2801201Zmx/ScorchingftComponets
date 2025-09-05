@@ -1,4 +1,4 @@
-<template>
+<template #default="{ fill, stroke, strokeWidth, strokeMiterlimit }">
     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 2048 2048"
         style="enable-background:new 0 0 2048 2048;" xml:space="preserve">
         <path :fill="fill" :stroke="stroke" :stroke-width="strokeWidth" :stroke-miterlimit="strokeMiterlimit" d="M114.1,985.7c0,0,519.1-558.7,942.3-558.7s929.3,558.7,929.3,558.7S1557,1568.3,1050,1568

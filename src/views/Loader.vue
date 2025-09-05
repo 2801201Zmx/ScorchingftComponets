@@ -64,40 +64,52 @@ watch(() => props.componentPath, async (componentName) => {
     dynamicComponent.value = null;
   }
 }, { immediate: true });
+
 </script>
 
 <template>
   <component :is="dynamicComponent" v-if="dynamicComponent && !loadError" />
   <div v-else-if="loadError" class="error">
-    <sf-icon fill="red">
-      <CircleCloseFilled />
+    <sf-icon>
+      <CircleCloseFilled fill="red"/>
     </sf-icon>
     组件加载失败: {{ loadError }}
   </div>
   <div v-else class="loading">
     组件加载中...<img src="@/assets/images/loading.gif" alt=""></img>
-    </div>
+  </div>
 </template>
 
 <style scoped>
 .loading,
 .error {
-  padding: 2rem;
+  padding: 1.5rem;
   text-align: center;
 }
 
 .loading {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color:var(--topic-color-text)
+}
+
+.loading img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+
+.error {
   display: flex;
   width: 100%;
   height: 100%;
   justify-content: center;
   align-items: center;
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: var(--topic-color-text);
-}
-
-.error {
   color: #f44336;
 }
 </style>

@@ -13,7 +13,7 @@ const basicCodeSnippet = ref<string>(`
     import { ref } from 'vue';
 
     const input = ref('');
-</sc` + `ript>
+</script>
 `);
 
 const disabledCodeSnippet = ref<string>(`
@@ -63,14 +63,67 @@ const passCodeSnippet = ref<string>(`
     import { ref } from 'vue';
 
     const input = ref('');
-</sc` + `ript>
+</script>
+`);
+
+const textareaCodeSnippet = ref<string>(`
+<template>
+    <sf-textarea 
+        v-model="textarea"
+        placeholder="请输入内容"
+    />
+</template>
+
+<script setup lang="ts">
+    import { ref } from 'vue';
+
+    const textarea = ref('');
+</script>
+`);
+
+const textareaDefaultCodeSnippet = ref<string>(`
+<template>
+    <sf-textarea 
+        v-model="textarea"
+        style="width: 240px"
+        placeholder="请输入内容"
+        :rows="4"
+    />
+</template>
+
+<script setup lang="ts">
+    import { ref } from 'vue';
+
+    const textarea = ref('');
+</script>
+`);
+
+const textareaFixedSizeCodeSnippet = ref<string>(`
+<template>
+    <sf-textarea 
+        v-model="textarea"
+        style="width: 240px; resize: none;"
+        placeholder="请输入内容"
+        :rows="4"
+        :cols="30"
+    />
+</template>
+
+<script setup lang="ts">
+    import { ref } from 'vue';
+
+    const textarea = ref('');
+</script>
 `);
 
 count.codeList = ([
     basicCodeSnippet.value,
     disabledCodeSnippet.value,
     clearCodeSnippet.value,
-    passCodeSnippet.value
+    passCodeSnippet.value,
+    textareaCodeSnippet.value,
+    textareaDefaultCodeSnippet.value,
+    textareaFixedSizeCodeSnippet.value
 ])
 
 export default function inputCodeHighlight(callback?: () => void): void {
