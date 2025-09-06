@@ -49,6 +49,33 @@
     },
     {
         "id": 5,
+        "title": "滑块输入",
+        "componentName": ["sf-input", "sf-input", "sf-input"],
+        "props": [
+            {
+            "type": "slider",
+            "modelValue": 50,
+            "min": 0,
+            "max": 100
+            },
+            {
+            "type": "slider",
+            "modelValue": 25,
+            "min": 10,
+            "max": 50,
+            "step": 5
+            },
+            {
+            "type": "slider",
+            "modelValue": 30,
+            "min": 0,
+            "max": 100,
+            "disabled": true
+            }
+        ]
+    },
+    {
+        "id": 6,
         "title": "默认文本框",
         "componentName": ["sf-textarea"],
         "props":[
@@ -60,7 +87,7 @@
         ]
     },
     {
-        "id": 6,
+        "id": 7,
         "title": "固定大小文本框",
         "componentName": ["sf-textarea"],
         "props":[

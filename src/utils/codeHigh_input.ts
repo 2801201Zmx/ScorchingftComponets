@@ -66,6 +66,41 @@ const passCodeSnippet = ref<string>(`
 </script>
 `);
 
+const sliderCodeSnippet = ref<string>(`
+<template>
+    <div style="display: flex; gap: 20px;">
+        <sf-input 
+            v-model="value1"
+            type="slider"
+            :min="0"
+            :max="100"
+        />
+        <sf-input 
+            v-model="value2"
+            type="slider"
+            :min="10"
+            :max="50"
+            :step="5"
+        />
+        <sf-input 
+            v-model="value3"
+            type="slider"
+            :min="0"
+            :max="100"
+            disabled
+        />
+    </div>
+</template>
+
+<script setup lang="ts">
+    import { ref } from 'vue';
+
+    const value1 = ref(50);
+    const value2 = ref(25);
+    const value3 = ref(30);
+</script>
+`);
+
 const textareaCodeSnippet = ref<string>(`
 <template>
     <sf-textarea 
@@ -121,6 +156,7 @@ count.codeList = ([
     disabledCodeSnippet.value,
     clearCodeSnippet.value,
     passCodeSnippet.value,
+    sliderCodeSnippet.value,
     textareaCodeSnippet.value,
     textareaDefaultCodeSnippet.value,
     textareaFixedSizeCodeSnippet.value

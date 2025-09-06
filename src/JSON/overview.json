@@ -1,0 +1,37 @@
+[
+    {
+        "title": "Basic 基础组件",
+        "components": [
+            {
+                "title": "Button 按钮",
+                "path": "button"
+            },
+            {
+                "title": "Icon 图标",
+                "path": "icon"
+            }
+        ]
+    },
+    {
+        "title": "Form 表单组件",
+        "components": [
+            {
+                "title": "Input 输入框",
+                "path": "input"
+            },
+            {
+                "title": "form 表单",
+                "path": "form"
+            }
+        ]
+    },
+    {
+        "title": "Data 数据组件",
+        "components": [
+            {
+                "title": "Card 卡片",
+                "path": "card"
+            }
+        ]
+    }
+]

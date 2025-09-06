@@ -124,6 +124,11 @@ onMounted(async () => {
 .example .components {
     width: 100%;
     padding: 20px 50px;
+    display: flex;
+}
+
+.example .components .sf-input:not(:nth-child(1)) {
+    margin-left: 20px;
 }
 
 .example .function {
