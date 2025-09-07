@@ -24,6 +24,7 @@
         "id": 5,
         "title": "其他图标",
         "components": [
+            "Like", "LikeFilled"
         ]
     }
 ]

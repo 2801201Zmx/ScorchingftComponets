@@ -12,15 +12,17 @@ import Code from './label.vue';
 import Pnpm from './pnpm.vue';
 import Npm from './npm.vue';
 import Yarn from './yarn.vue';
+import LikeFilled from './likefilled.vue';
+import Like from './like.vue';
 
 export { 
     CircleCloseFilled, CircleClose, View, Hide, CopyDocument, GitHubDark, GitHubLight, Documentation,
-    Code, Pnpm, Npm, Yarn
+    Code, Pnpm, Npm, Yarn, LikeFilled, Like
 }
 
 const components = {
     CircleCloseFilled, CircleClose, View, Hide, CopyDocument, GitHubDark, GitHubLight, Documentation,
-    Code, Pnpm, Npm, Yarn
+    Code, Pnpm, Npm, Yarn, LikeFilled, Like
 }
 
 export {
@@ -35,7 +37,9 @@ export {
     Code as SFCode,
     Pnpm as SFPnpm,
     Npm as SFNpm,
-    Yarn as SFYarn
+    Yarn as SFYarn,
+    LikeFilled as SFLikefilled,
+    Like as SFLike
 }
 
 export default {

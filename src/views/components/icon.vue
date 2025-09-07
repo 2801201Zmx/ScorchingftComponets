@@ -11,6 +11,8 @@
         <div class="setup-steps" v-for="(items, index) in setupSteps" :key="index">
             <span class="text">
                 {{ items.title }}
+                <span v-if="items.title == 'Scorchingftui/icon提供了两种使用方式'" class="abandoned">(现已废弃 <span
+                        class="details cursor" @click="router.push('/guide/start')">查看详情</span> )</span>
             </span>
             <p v-if="items.title === '安装'" v-html="items.subheading">
             </p>
@@ -26,7 +28,7 @@
                         <span class="codecolor" v-if="items.title === '完整引入'" v-html="allCodeView"></span>
                         <span class="codecolor" v-if="items.title === '按需引入'" v-html="codeView"></span>
                     </template>
-                </Code>
+        </Code>
             </div>
         </div>
     </div>
@@ -37,8 +39,8 @@
             </div>
             <div class="allicon">
                 <span class="allicon-list" v-for="(icon, index) in item.components" @click="CopyObject('#code', `<sf-icon>
-    <${icon} />
-</sf-icon>`)" id="code" :key="index">
+        <${icon} />
+    </sf-icon>`)" id="code" :key="index">
                     <sf-icon>
                         <component :is="icon" />
                     </sf-icon>
@@ -222,6 +224,21 @@ const setupSteps = reactive<Array<setupStepsItems>>([
     font-weight: bold;
     color: var(--topic-color-text);
     margin-bottom: 10px;
+}
+
+.abandoned {
+    font-size: 1.1rem;
+    margin-left: 10px;
+}
+
+.text .details {
+    box-sizing: content-box;
+    border-bottom: 1px solid var(--topic-color-text);
+}
+
+.text .details:hover {
+    color: var(--topic-color-hover);
+    border-bottom: 1px solid var(--topic-color-hover);
 }
 
 .setup-steps {

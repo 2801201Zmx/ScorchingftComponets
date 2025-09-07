@@ -1,7 +1,6 @@
 import { defineConfig, type PluginOption } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import { fileURLToPath } from 'node:url'
-import { resolve } from 'node:path'
 
 export default defineConfig(({ mode }) => {
   const plugins: PluginOption[] = [vue()];

@@ -283,7 +283,7 @@ const setupSteps = reactive<Array<setupStepsItems>>([
     },
     {
         title: "完整引入",
-        subheading: "在安装完成后您还需要全局注册后才能正常使用，如果不在乎包体积大小，可以使用此方法",
+        subheading: "在安装完成后您还需要全局注册后才能正常使用，如果不在乎包体积大小，可以使用此方法，在新的版本中已经无需再次使用图标安装方法即可使用",
         codetype: "main.ts",
         code: allCode.value,
         shell: false,
