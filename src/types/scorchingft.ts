@@ -10,3 +10,12 @@ export interface InstallOptions {
 export type SFCWithInstall<T> = T & {
   install(app: App): void
 }
+
+export type WithInstall<T> = T & {
+  install(app: App): void
+}
+
+export type ScorchingftComponent = {
+  [key: string]: any
+  install(app: App): void
+}

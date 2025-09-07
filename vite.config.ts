@@ -19,31 +19,6 @@ export default defineConfig(({ mode }) => {
 
   return {
     plugins,
-    // build: {
-    //   lib: {
-    //     entry: resolve(__dirname, 'src/index.ts'),
-    //     name: 'ScorchingftComponents',
-    //     fileName: (format: string) => `scorchingft-components.${format}.js`,
-    //   },
-    //   rollupOptions: {
-    //     external: ['vue', 'vue-router'],
-    //     output: {
-    //       exports: "named",
-    //       globals: {
-    //         vue: 'Vue',
-    //         'vue-router': 'VueRouter'
-    //       },
-    //       assetFileNames: (assetInfo: any) => {
-    //         if (assetInfo.name === 'style.css') {
-    //           return 'style.css'
-    //         }
-    //         return assetInfo.name
-    //       }
-    //     }
-    //   },
-    //   cssCodeSplit: false,
-    //   sourcemap: true
-    // },
     build: {
       outDir: 'dist',
       sourcemap: true

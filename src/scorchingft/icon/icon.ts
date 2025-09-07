@@ -23,11 +23,27 @@ const components = {
     Code, Pnpm, Npm, Yarn
 }
 
+export {
+    CircleCloseFilled as SFCircleCloseFilled,
+    CircleClose as SFCircleClose,
+    View as SFView,
+    Hide as SFHide,
+    CopyDocument as SFCopyDocument,
+    GitHubDark as SFGitHubDark,
+    GitHubLight as SFGitHubLight,
+    Documentation as SFDocumentation,
+    Code as SFCode,
+    Pnpm as SFPnpm,
+    Npm as SFNpm,
+    Yarn as SFYarn
+}
+
 export default {
   install(app: App) {
     Object.entries(components).forEach(([name, component]) => {
       app.component(name, component);
     });
-  }
+  },
+  
+  ...components
 }
-
