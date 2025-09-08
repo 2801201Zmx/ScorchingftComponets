@@ -15,6 +15,10 @@ const props = defineProps({
         type: String,
         default: 'none'
     },
+    stroke: {
+        type: String,
+        default: '#CE9BFD'
+    },
     strokeWidth: {
         type: Number,
         default: '48'
@@ -22,10 +26,6 @@ const props = defineProps({
     strokeMiterlimit: {
         type: Number,
         default: 0
-    },
-    stroke: {
-        type: String,
-        default: '#CE9BFD'
     },
 })
 

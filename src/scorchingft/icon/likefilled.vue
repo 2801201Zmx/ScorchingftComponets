@@ -23,7 +23,7 @@ const props = defineProps({
     },
     strokeWidth: {
         type: Number,
-        default: '72'
+        default: '0'
     },
     strokeMiterlimit: {
         type: Number,
