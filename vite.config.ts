@@ -26,7 +26,7 @@ export default defineConfig(({ mode }) => {
       alias: {
         '@': fileURLToPath(new URL('./src', import.meta.url)),
         'Scorchingft-Components': fileURLToPath(new URL('./src/index.ts', import.meta.url)),
-        'ScorchingftIcon': fileURLToPath(new URL('./src/scorchingft/icon/icon.ts', import.meta.url)),
+        'ScorchingftIcon': fileURLToPath(new URL('./src/scorchingft/icon/index.ts', import.meta.url)),
       },
     },
     server: {

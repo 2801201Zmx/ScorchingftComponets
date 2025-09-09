@@ -14,15 +14,18 @@ import Npm from './npm.vue';
 import Yarn from './yarn.vue';
 import LikeFilled from './likefilled.vue';
 import Like from './like.vue';
+import Dark from './dark.vue';
+import Light from './light.vue';
+import Comment from './comment.vue';
 
 export { 
     CircleCloseFilled, CircleClose, View, Hide, CopyDocument, GitHubDark, GitHubLight, Documentation,
-    Code, Pnpm, Npm, Yarn, LikeFilled, Like
+    Code, Pnpm, Npm, Yarn, LikeFilled, Like, Dark, Light, Comment,
 }
 
-const components = {
+export const components = {
     CircleCloseFilled, CircleClose, View, Hide, CopyDocument, GitHubDark, GitHubLight, Documentation,
-    Code, Pnpm, Npm, Yarn, LikeFilled, Like
+    Code, Pnpm, Npm, Yarn, LikeFilled, Like, Dark, Light, Comment,
 }
 
 export {
@@ -39,7 +42,10 @@ export {
     Npm as SFNpm,
     Yarn as SFYarn,
     LikeFilled as SFLikefilled,
-    Like as SFLike
+    Like as SFLike,
+    Dark as SFDark,
+    Light as SFLight,
+    Comment as SFComment,
 }
 
 export default {

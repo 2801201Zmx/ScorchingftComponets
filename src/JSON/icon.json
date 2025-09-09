@@ -10,7 +10,7 @@
         "id": 3,
         "title": "文档类图标",
         "components": [
-            "CopyDocument","Documentation", "Code"
+            "CopyDocument","Documentation", "Code", "Comment"
         ]
     },
     {
@@ -24,7 +24,7 @@
         "id": 5,
         "title": "其他图标",
         "components": [
-            "Like", "LikeFilled"
+            "Like", "Dark", "Light", "LikeFilled"
         ]
     }
 ]
