@@ -43,17 +43,22 @@ export interface ScorchingftInstallationOptions {
 
 export type ComponentSize = 'large' | 'medium' | 'small' | 'mini'
 
-export default {
+export interface ScorchingftUI {
+  install: (app: App, options?: ScorchingftInstallationOptions) => void;
+}
+
+const ScorchingftUI: ScorchingftUI = {
   install(app: App, options?: ScorchingftInstallationOptions) {
-    // 注册基础组件
+
     Object.entries(components).forEach(([name, component]) => {
       const kebabName = `sf-${toKebabCase(name)}`;
       app.component(kebabName, component);
     });
     
-    // 注册图标组件
     Object.entries(SFIcons).forEach(([name, component]) => {
       app.component(name, component);
     });
   }
 }
+
+export default ScorchingftUI

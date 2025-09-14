@@ -15,7 +15,12 @@
             'is-dark': dark
         }
     ]" :disabled="disabled || loading" :autofocus="autofocus" :type="nativeType" :style="buttonStyle"
-        @click="handleClick">
+        @click="handleClick"
+        @mousedown="handleMouseDown"
+        @mouseup="handleMouseUp"
+        @mouseleave="handleMouseLeave"
+        @focus="handleFocus"
+        @blur="handleBlur">
         <template v-if="loading">
             <slot v-if="$slots.loading" name="loading"></slot>
             <component v-else-if="loadingIcon" :is="loadingIcon" class="sf-button__loading-icon" />
@@ -71,6 +76,7 @@ const emit = defineEmits<{
 
 const slots = useSlots()
 const innerRef = ref<HTMLElement | null>(null)
+const isFocused = ref(false)
 
 const spacedText = computed(() => {
     if (!props.autoInsertSpace) return undefined
@@ -108,6 +114,30 @@ const handleClick = (event: MouseEvent) => {
         return
     }
     emit('click', event)
+}
+
+const handleMouseDown = (event: MouseEvent) => {
+    if (props.disabled || props.loading) {
+        return
+    }
+    event.preventDefault()
+    isFocused.value = true
+}
+
+const handleMouseUp = () => {
+    isFocused.value = false
+}
+
+const handleMouseLeave = () => {
+    isFocused.value = false
+}
+
+const handleFocus = () => {
+    isFocused.value = true
+}
+
+const handleBlur = () => {
+    isFocused.value = false
 }
 </script>
 
@@ -367,6 +397,52 @@ const handleClick = (event: MouseEvent) => {
 .sf-button--primary:active {
     background: var(--topic-color-active);
     border-color: var(--topic-color-active);
+    color: #fff;
+    outline: none;
+}
+
+/* 添加按下状态样式 */
+.sf-button:active:not(.is-disabled):not(.is-loading),
+.sf-button.is-focused:not(.is-disabled):not(.is-loading) {
+    transform: translateY(1px);
+}
+
+.sf-button--primary:active:not(.is-disabled):not(.is-loading),
+.sf-button--primary.is-focused:not(.is-disabled):not(.is-loading) {
+    background: var(--topic-color-active);
+    border-color: var(--topic-color-active);
+    color: #fff;
+    outline: none;
+}
+
+.sf-button--success:active:not(.is-disabled):not(.is-loading),
+.sf-button--success.is-focused:not(.is-disabled):not(.is-loading) {
+    background: #5daf34;
+    border-color: #5daf34;
+    color: #fff;
+    outline: none;
+}
+
+.sf-button--warning:active:not(.is-disabled):not(.is-loading),
+.sf-button--warning.is-focused:not(.is-disabled):not(.is-loading) {
+    background: #cf9236;
+    border-color: #cf9236;
+    color: #fff;
+    outline: none;
+}
+
+.sf-button--danger:active:not(.is-disabled):not(.is-loading),
+.sf-button--danger.is-focused:not(.is-disabled):not(.is-loading) {
+    background: #dd6161;
+    border-color: #dd6161;
+    color: #fff;
+    outline: none;
+}
+
+.sf-button--info:active:not(.is-disabled):not(.is-loading),
+.sf-button--info.is-focused:not(.is-disabled):not(.is-loading) {
+    background: #82848a;
+    border-color: #82848a;
     color: #fff;
     outline: none;
 }

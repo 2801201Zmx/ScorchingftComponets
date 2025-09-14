@@ -15,8 +15,23 @@
                 </div>
                 <div class="example">
                     <div class="components">
-                        <component v-for="(components, keys) in item.componentName" :is="components"
-                            v-bind="item.props[keys]"></component>
+                        <!-- 特殊处理滑块组件，不显示当前值 -->
+                        <template v-if="item.id === 5">
+                            <div v-for="(components, keys) in item.componentName" :key="keys" class="slider-item">
+                                <sf-input
+                                    v-model.number="sliderValues[keys]"
+                                    v-bind="item.props[keys]"
+                                />
+                            </div>
+                        </template>
+                        <!-- 其他组件保持原有逻辑 -->
+                        <component 
+                            v-else
+                            v-for="(components, keys) in item.componentName" 
+                            :is="components"
+                            :key="keys"
+                            v-bind="item.props[keys]"
+                        ></component>
                     </div>
                     <div class="function">
                         <sf-icon size="30" @click="CopyObject('#code', count.codeList[item.id - 1])" id="code">
@@ -40,7 +55,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onBeforeMount } from 'vue';
+import { ref, onMounted, reactive } from 'vue';
 import 'highlight.js/styles/github.css';
 import InputView from '@/JSON/inputView.json';
 
@@ -53,26 +68,8 @@ import { CopyDocument } from '@/scorchingft/icon/icon';
 
 const count = useCounterStore();
 
-
-// ### 浅色主题：
-// 1. `default.css` - **默认主题**，简洁的浅色背景  
-// 2. `github.css` - GitHub 风格  
-// 3. `atom-one-light.css` - Atom 编辑器的浅色主题  
-// 4. `vs.css` - Visual Studio 风格的浅色主题  
-// 5. `xcode.css` - Xcode IDE 风格的浅色主题  
-
-// ### 深色主题：
-// 1. `dracula.css` - 暗紫色调，高对比度  
-// 2. `monokai-sublime.css` - Sublime Text 风格  
-// 3. `atom-one-dark.css` - Atom 编辑器的深色主题  
-// 4. `vs2015.css` - Visual Studio 2015 深色主题  
-// 5. `night-owl.css` - 夜间猫头鹰风格，蓝紫色调  
-
-// ### 特殊风格：
-// 1. `solarized-light.css` - Solarized 浅色（低对比度护眼）  
-// 2. `solarized-dark.css` - Solarized 深色（低对比度护眼）  
-// 3. `gradient-dark.css` - 渐变色背景深色主题  
-// 4. `stackoverflow-light.css` - Stack Overflow 风格  
+// 滑块组件的响应式数据
+const sliderValues = reactive([50, 25, 30]);
 
 const codeBlocks = ref<(HTMLElement | null)[]>([]);
 const isClicked = ref<boolean>(true);
@@ -125,6 +122,16 @@ onMounted(async () => {
     width: 100%;
     padding: 20px 50px;
     display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.slider-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
 }
 
 .example .components .sf-input:not(:nth-child(1)) {

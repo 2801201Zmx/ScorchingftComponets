@@ -54,20 +54,17 @@
         "props": [
             {
             "type": "slider",
-            "modelValue": 50,
             "min": 0,
             "max": 100
             },
             {
             "type": "slider",
-            "modelValue": 25,
             "min": 10,
             "max": 50,
             "step": 5
             },
             {
             "type": "slider",
-            "modelValue": 30,
             "min": 0,
             "max": 100,
             "disabled": true

@@ -68,27 +68,36 @@ const passCodeSnippet = ref<string>(`
 
 const sliderCodeSnippet = ref<string>(`
 <template>
-    <div style="display: flex; gap: 20px;">
-        <sf-input 
-            v-model="value1"
-            type="slider"
-            :min="0"
-            :max="100"
-        />
-        <sf-input 
-            v-model="value2"
-            type="slider"
-            :min="10"
-            :max="50"
-            :step="5"
-        />
-        <sf-input 
-            v-model="value3"
-            type="slider"
-            :min="0"
-            :max="100"
-            disabled
-        />
+    <div class="slider-demo">
+        <div class="slider-item">
+            <sf-input 
+                v-model="value1"
+                type="slider"
+                :min="0"
+                :max="100"
+            />
+            <span class="slider-value">{{ value1 }}</span>
+        </div>
+        <div class="slider-item">
+            <sf-input 
+                v-model="value2"
+                type="slider"
+                :min="10"
+                :max="50"
+                :step="5"
+            />
+            <span class="slider-value">{{ value2 }}</span>
+        </div>
+        <div class="slider-item">
+            <sf-input 
+                v-model="value3"
+                type="slider"
+                :min="0"
+                :max="100"
+                disabled
+            />
+            <span class="slider-value">{{ value3 }}</span>
+        </div>
     </div>
 </template>
 
@@ -99,6 +108,32 @@ const sliderCodeSnippet = ref<string>(`
     const value2 = ref(25);
     const value3 = ref(30);
 </script>
+
+<style scoped>
+.slider-demo {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.slider-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.slider-value {
+    font-size: 14px;
+    font-weight: bold;
+    background-color: #f5f5f5;
+    padding: 4px 12px;
+    border-radius: 12px;
+    min-width: 40px;
+    text-align: center;
+}
+</style>
 `);
 
 const textareaCodeSnippet = ref<string>(`
