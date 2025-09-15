@@ -36,6 +36,142 @@
                 </div>
             </div>
         </div>
+        <div class="props-table">
+            <h3>Form 属性</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>属性名</th>
+                        <th>说明</th>
+                        <th>类型</th>
+                        <th>可选值</th>
+                        <th>默认值</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>model</td>
+                        <td>表单数据对象</td>
+                        <td>Record&lt;string, any&gt;</td>
+                        <td>—</td>
+                        <td>{}</td>
+                    </tr>
+                    <tr class="even">
+                        <td>rules</td>
+                        <td>表单验证规则</td>
+                        <td>Record&lt;string, any&gt;</td>
+                        <td>—</td>
+                        <td>{}</td>
+                    </tr>
+                    <tr>
+                        <td>labelWidth</td>
+                        <td>标签宽度</td>
+                        <td>string / number</td>
+                        <td>—</td>
+                        <td>auto</td>
+                    </tr>
+                    <tr class="even">
+                        <td>labelPosition</td>
+                        <td>标签位置</td>
+                        <td>string</td>
+                        <td>left / top / right</td>
+                        <td>left</td>
+                    </tr>
+                    <tr>
+                        <td>size</td>
+                        <td>表单尺寸</td>
+                        <td>string</td>
+                        <td>small / medium / large</td>
+                        <td>medium</td>
+                    </tr>
+                    <tr class="even">
+                        <td>showSubmit</td>
+                        <td>是否显示提交按钮</td>
+                        <td>boolean</td>
+                        <td>—</td>
+                        <td>true</td>
+                    </tr>
+                    <tr>
+                        <td>showReset</td>
+                        <td>是否显示重置按钮</td>
+                        <td>boolean</td>
+                        <td>—</td>
+                        <td>false</td>
+                    </tr>
+                    <tr class="even">
+                        <td>submitText</td>
+                        <td>提交按钮文本</td>
+                        <td>string</td>
+                        <td>—</td>
+                        <td>提交</td>
+                    </tr>
+                    <tr>
+                        <td>resetText</td>
+                        <td>重置按钮文本</td>
+                        <td>string</td>
+                        <td>—</td>
+                        <td>重置</td>
+                    </tr>
+                    <tr class="even">
+                        <td>loading</td>
+                        <td>是否加载中状态</td>
+                        <td>boolean</td>
+                        <td>—</td>
+                        <td>false</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Form Item 属性</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>属性名</th>
+                        <th>说明</th>
+                        <th>类型</th>
+                        <th>可选值</th>
+                        <th>默认值</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>label</td>
+                        <td>标签文本</td>
+                        <td>string</td>
+                        <td>—</td>
+                        <td>—</td>
+                    </tr>
+                    <tr class="even">
+                        <td>prop</td>
+                        <td>表单域 model 字段</td>
+                        <td>string</td>
+                        <td>—</td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td>labelWidth</td>
+                        <td>标签宽度</td>
+                        <td>string / number</td>
+                        <td>—</td>
+                        <td>—</td>
+                    </tr>
+                    <tr class="even">
+                        <td>labelPosition</td>
+                        <td>标签位置</td>
+                        <td>string</td>
+                        <td>left / top / right</td>
+                        <td>left</td>
+                    </tr>
+                    <tr>
+                        <td>size</td>
+                        <td>表单项尺寸</td>
+                        <td>string</td>
+                        <td>small / medium / large</td>
+                        <td>medium</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </template>
 
@@ -156,4 +292,4 @@ onMounted(async () => {
     padding: 10px 0 0 20px;
     line-height: 20px;
 }
-</style> 
+</style>

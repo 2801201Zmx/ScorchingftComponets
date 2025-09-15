@@ -21,7 +21,7 @@
                         </component>
                     </div>
                     <div class="function">
-                        <sf-icon size="30" @click="CopyObject('#code-' + item.id, count.codeList[item.id - 1])" 
+                        <sf-icon size="30" @click="CopyObject('#code-' + item.id, count.codeList[item.id - 1])"
                             :id="'code-' + item.id" class="copy-icon">
                             <CopyDocument />
                         </sf-icon>
@@ -37,6 +37,148 @@
                         </pre>
                     </div>
                 </div>
+            </div>
+            <div class="props-table">
+                <h3>属性</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>属性名</th>
+                            <th>说明</th>
+                            <th>类型</th>
+                            <th>可选值</th>
+                            <th>默认值</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>size</td>
+                            <td>尺寸</td>
+                            <td>string</td>
+                            <td>large / default / small</td>
+                            <td>default</td>
+                        </tr>
+                        <tr class="even">
+                            <td>type</td>
+                            <td>类型</td>
+                            <td>string</td>
+                            <td>primary / success / warning / danger / info</td>
+                            <td>—</td>
+                        </tr>
+                        <tr>
+                            <td>plain</td>
+                            <td>是否朴素按钮</td>
+                            <td>boolean</td>
+                            <td>—</td>
+                            <td>false</td>
+                        </tr>
+                        <tr class="even">
+                            <td>text</td>
+                            <td>是否文字按钮</td>
+                            <td>boolean</td>
+                            <td>—</td>
+                            <td>false</td>
+                        </tr>
+                        <tr>
+                            <td>bg</td>
+                            <td>是否显示背景色（仅在 text 为 true 时可用）</td>
+                            <td>boolean</td>
+                            <td>—</td>
+                            <td>false</td>
+                        </tr>
+                        <tr class="even">
+                            <td>link</td>
+                            <td>是否链接按钮</td>
+                            <td>boolean</td>
+                            <td>—</td>
+                            <td>false</td>
+                        </tr>
+                        <tr>
+                            <td>round</td>
+                            <td>是否圆角按钮</td>
+                            <td>boolean</td>
+                            <td>—</td>
+                            <td>false</td>
+                        </tr>
+                        <tr class="even">
+                            <td>circle</td>
+                            <td>是否圆形按钮</td>
+                            <td>boolean</td>
+                            <td>—</td>
+                            <td>false</td>
+                        </tr>
+                        <tr>
+                            <td>loading</td>
+                            <td>是否加载中状态</td>
+                            <td>boolean</td>
+                            <td>—</td>
+                            <td>false</td>
+                        </tr>
+                        <tr class="even">
+                            <td>loadingIcon</td>
+                            <td>自定义加载中图标</td>
+                            <td>string / Component</td>
+                            <td>—</td>
+                            <td>—</td>
+                        </tr>
+                        <tr>
+                            <td>disabled</td>
+                            <td>是否禁用状态</td>
+                            <td>boolean</td>
+                            <td>—</td>
+                            <td>false</td>
+                        </tr>
+                        <tr class="even">
+                            <td>icon</td>
+                            <td>图标组件</td>
+                            <td>string / Component</td>
+                            <td>—</td>
+                            <td>—</td>
+                        </tr>
+                        <tr>
+                            <td>autofocus</td>
+                            <td>是否自动获取焦点</td>
+                            <td>boolean</td>
+                            <td>—</td>
+                            <td>false</td>
+                        </tr>
+                        <tr class="even">
+                            <td>nativeType</td>
+                            <td>原生 type 属性</td>
+                            <td>string</td>
+                            <td>button / submit / reset</td>
+                            <td>button</td>
+                        </tr>
+                        <tr>
+                            <td>autoInsertSpace</td>
+                            <td>中文按钮自动添加空格</td>
+                            <td>boolean</td>
+                            <td>—</td>
+                            <td>false</td>
+                        </tr>
+                        <tr class="even">
+                            <td>color</td>
+                            <td>自定义按钮颜色</td>
+                            <td>string</td>
+                            <td>—</td>
+                            <td>—</td>
+                        </tr>
+                        <tr>
+                            <td>dark</td>
+                            <td>深色模式</td>
+                            <td>boolean</td>
+                            <td>—</td>
+                            <td>false</td>
+                        </tr>
+                        <tr class="even">
+                            <td>tag</td>
+                            <td>自定义元素标签</td>
+                            <td>string / Component</td>
+                            <td>—</td>
+                            <td>button</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>

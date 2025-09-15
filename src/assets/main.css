@@ -29,6 +29,46 @@ body {
     text-indent: 2em;
 }
 
+.props-table {
+    margin-top: 20px;
+    overflow-x: auto;
+}
+
+.props-table h3 {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--topic-color-text);
+    margin-bottom: 10px;
+}
+
+.props-table table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.props-table table th,
+.props-table table td {
+    padding: 12px 10px;
+    border: 1px solid #e4e4e4;
+    text-align: left;
+    font-size: 0.9rem;
+}
+
+.props-table table th {
+    background-color: #f5f7fa;
+    font-weight: bold;
+    color: #606266;
+}
+
+.props-table table tr:nth-child(2n-1) {
+    background-color: #ffffff;
+}
+
+.props-table table tr:nth-child(2n) {
+    background-color: #eeeeee;
+}
+
 input[type="password"]::-webkit-credentials-cramble-button{
     appearance: none;
 }
@@ -39,6 +79,17 @@ input[type="password"]::-ms-reveal{
 
 input[type="password"]::-ms-clear{
     display: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* 针对Firefox */
+input[type="number"] {
+    -moz-appearance: textfield;
 }
 
 ::-webkit-scrollbar {

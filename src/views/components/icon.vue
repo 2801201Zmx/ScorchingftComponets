@@ -51,6 +51,73 @@
             </div>
         </div>
     </div>
+    <div class="props-table">
+        <h3>Icon 属性</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>属性名</th>
+                    <th>说明</th>
+                    <th>类型</th>
+                    <th>可选值</th>
+                    <th>默认值</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>size</td>
+                    <td>图标大小</td>
+                    <td>number</td>
+                    <td>—</td>
+                    <td>32</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>SVG 图标属性</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>属性名</th>
+                    <th>说明</th>
+                    <th>类型</th>
+                    <th>可选值</th>
+                    <th>默认值</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>fill</td>
+                    <td>填充颜色</td>
+                    <td>string</td>
+                    <td>—</td>
+                    <td>见各图标组件默认值</td>
+                </tr>
+                <tr>
+                    <td>stroke</td>
+                    <td>描边颜色</td>
+                    <td>string</td>
+                    <td>—</td>
+                    <td>见各图标组件默认值</td>
+                </tr>
+                <tr>
+                    <td>strokeWidth</td>
+                    <td>描边宽度</td>
+                    <td>number</td>
+                    <td>—</td>
+                    <td>见各图标组件默认值</td>
+                </tr>
+                <tr>
+                    <td>strokeMiterlimit</td>
+                    <td>描边尖角限制</td>
+                    <td>number</td>
+                    <td>—</td>
+                    <td>见各图标组件默认值</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>注：SVG 图标属性仅适用于 SVG 图标组件，不适用于纯 CSS 实现的图标（如 pnpm、npm、yarn 等）</p>
+    </div>
 </template>
 
 <script setup lang="ts">

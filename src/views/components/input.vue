@@ -18,20 +18,12 @@
                         <!-- 特殊处理滑块组件，不显示当前值 -->
                         <template v-if="item.id === 5">
                             <div v-for="(components, keys) in item.componentName" :key="keys" class="slider-item">
-                                <sf-input
-                                    v-model.number="sliderValues[keys]"
-                                    v-bind="item.props[keys]"
-                                />
+                                <sf-input v-model.number="sliderValues[keys]" v-bind="item.props[keys]" />
                             </div>
                         </template>
                         <!-- 其他组件保持原有逻辑 -->
-                        <component 
-                            v-else
-                            v-for="(components, keys) in item.componentName" 
-                            :is="components"
-                            :key="keys"
-                            v-bind="item.props[keys]"
-                        ></component>
+                        <component v-else v-for="(components, keys) in item.componentName" :is="components" :key="keys"
+                            v-bind="item.props[keys]"></component>
                     </div>
                     <div class="function">
                         <sf-icon size="30" @click="CopyObject('#code', count.codeList[item.id - 1])" id="code">
@@ -49,6 +41,85 @@
                         </pre>
                     </div>
                 </div>
+            </div>
+            <div class="props-table">
+                <h3>Input 属性</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>属性名</th>
+                            <th>说明</th>
+                            <th>类型</th>
+                            <th>可选值</th>
+                            <th>默认值</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>modelValue / v-model</td>
+                            <td>绑定值</td>
+                            <td>string / number</td>
+                            <td>—</td>
+                            <td>''</td>
+                        </tr>
+                        <tr class="even">
+                            <td>type</td>
+                            <td>类型</td>
+                            <td>string</td>
+                            <td>text / password / email / number / slider</td>
+                            <td>text</td>
+                        </tr>
+                        <tr>
+                            <td>placeholder</td>
+                            <td>输入框占位文本</td>
+                            <td>string</td>
+                            <td>—</td>
+                            <td>—</td>
+                        </tr>
+                        <tr class="even">
+                            <td>disabled</td>
+                            <td>是否禁用</td>
+                            <td>boolean</td>
+                            <td>—</td>
+                            <td>false</td>
+                        </tr>
+                        <tr>
+                            <td>showPassword</td>
+                            <td>是否显示切换密码图标</td>
+                            <td>boolean</td>
+                            <td>—</td>
+                            <td>false</td>
+                        </tr>
+                        <tr class="even">
+                            <td>clearable</td>
+                            <td>是否可清空</td>
+                            <td>boolean</td>
+                            <td>—</td>
+                            <td>false</td>
+                        </tr>
+                        <tr>
+                            <td>min</td>
+                            <td>原生属性，最小值（仅在 slider 类型下有效）</td>
+                            <td>number</td>
+                            <td>—</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="even">
+                            <td>max</td>
+                            <td>原生属性，最大值（仅在 slider 类型下有效）</td>
+                            <td>number</td>
+                            <td>—</td>
+                            <td>100</td>
+                        </tr>
+                        <tr>
+                            <td>step</td>
+                            <td>原生属性，步长（仅在 slider 类型下有效）</td>
+                            <td>number</td>
+                            <td>—</td>
+                            <td>1</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
