@@ -5,13 +5,13 @@
             {
                 "title": "Button 按钮",
                 "issrc": true,
-                "src": "/assets/images/overview_button.png",
+                "src": "@/assets/images/overview_button.png",
                 "path": "button"
             },
             {
                 "title": "Icon 图标",
                 "issrc": true,
-                "src": "/assets/images/overview_icon.png",
+                "src": "@/assets/images/overview_icon.png",
                 "path": "icon"
             }
         ]
@@ -22,13 +22,13 @@
             {
                 "title": "Input 输入框",
                 "issrc": true,
-                "src": "/assets/images/overview_input.png",
+                "src": "@/assets/images/overview_input.png",
                 "path": "input"
             },
             {
                 "title": "form 表单",
                 "issrc": true,
-                "src": "/assets/images/overview_form.png",
+                "src": "@/assets/images/overview_form.png",
                 "path": "form"
             }
         ]
@@ -39,7 +39,7 @@
             {
                 "title": "Card 卡片",
                 "issrc": false,
-                "src": "/assets/images/overview_card.png",
+                "src": "@/assets/images/overview_card.png",
                 "path": "card"
             }
         ]

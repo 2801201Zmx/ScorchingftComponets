@@ -6,6 +6,7 @@
     </div>
     
     <div class="components-grid" v-for="(group, index) in components" :key="index">
+      <h2 class="group-title">{{ group.title }}</h2>
       <div class="component-list">
         <div 
           class="component-card" 
@@ -14,7 +15,7 @@
           @click="goToComponent(component.path)"
         >
           <div class="component-preview">
-            <img v-if="component.issrc" :src="`/src${component.src}`" alt="">
+            <img v-if="component.issrc" :src="getImage(component.src)" alt="">
             <div v-else class="preview-placeholder">
               {{ component.title.split(' ')[0] }}
             </div>
@@ -33,7 +34,24 @@
 import { useRouter } from 'vue-router';
 import components from '@/JSON/overview.json';
 
+// 直接导入所有可能用到的图片
+import overviewButton from '@/assets/images/overview_button.png';
+import overviewIcon from '@/assets/images/overview_icon.png';
+import overviewInput from '@/assets/images/overview_input.png';
+import overviewForm from '@/assets/images/overview_form.png';
+
 const router = useRouter();
+
+const imageMap: Record<string, string> = {
+  '@/assets/images/overview_button.png': overviewButton,
+  '@/assets/images/overview_icon.png': overviewIcon,
+  '@/assets/images/overview_input.png': overviewInput,
+  '@/assets/images/overview_form.png': overviewForm,
+};
+
+const getImage = (imagePath: string) => {
+  return imageMap[imagePath] || imagePath;
+};
 
 const goToComponent = (path: string) => {
   router.push(`/components/${path}`);

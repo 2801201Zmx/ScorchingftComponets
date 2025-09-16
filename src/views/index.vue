@@ -36,7 +36,6 @@ const Components = [
     }
 ]
 
-
 </script>
 
 <style scoped>
@@ -96,7 +95,7 @@ h5 {
 }
 
 .card .sf-card:nth-child(1) .content {
-    background: url('/componets_help.png') no-repeat center center;
+    background: url('../assets/images/componets_help.png') no-repeat center center;
     background-size: 100% 100%;
 }
 
@@ -109,7 +108,7 @@ h5 {
 }
 
 .card .sf-card:nth-child(2) .content {
-    background: url('/componets_list.png') no-repeat center center;
+    background: url('../assets/images/componets_list.png') no-repeat center center;
     background-size: 100% 100%;
 }
 
