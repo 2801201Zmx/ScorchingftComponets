@@ -14,7 +14,8 @@
           @click="goToComponent(component.path)"
         >
           <div class="component-preview">
-            <div class="preview-placeholder">
+            <img v-if="component.issrc" :src="`/src/${component.src}`" alt="">
+            <div v-else class="preview-placeholder">
               {{ component.title.split(' ')[0] }}
             </div>
           </div>
@@ -101,6 +102,12 @@ const goToComponent = (path: string) => {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.component-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .preview-placeholder {
