@@ -14,7 +14,7 @@
           @click="goToComponent(component.path)"
         >
           <div class="component-preview">
-            <img v-if="component.issrc" :src="`/src/${component.src}`" alt="">
+            <img v-if="component.issrc" :src="`/src${component.src}`" alt="">
             <div v-else class="preview-placeholder">
               {{ component.title.split(' ')[0] }}
             </div>
